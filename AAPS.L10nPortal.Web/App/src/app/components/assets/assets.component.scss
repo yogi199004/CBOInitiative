@@ -1,0 +1,74 @@
+.file-input {
+  display: none;
+}
+
+.metadata-container {
+  margin-bottom: 15px;
+}
+
+.textAlignCenter {
+  text-align: left;
+}
+
+th {
+  line-height: 20px;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #313131;
+  font-size: 15px;
+  white-space: nowrap;
+  font-weight: 600;
+
+  a {
+    color: #313131;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.img-button {
+  background-color: transparent;
+  vertical-align: baseline;
+  text-decoration: none;
+  margin: 0;
+  outline: 0;
+  border: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.img-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+.img-button.upload-arrow {
+  background-image: url('/assets/upload.svg');
+}
+
+.img-button.download-arrow {
+  background-image: url('/assets/download.svg');
+}
+
+table.assets-list th:first-child {
+  padding-left: 26px;
+}
+
+table.assets-list span.dot {
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border-radius: 100%;
+  display: inline-block;
+}
+
+table.assets-list span.dot.changed {
+  background: #00A1DE;
+}

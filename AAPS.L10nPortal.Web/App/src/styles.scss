@@ -1,0 +1,205 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "./LtenStyles/stylePaths.scss";
+@import url(../node_modules/bootstrap-icons);
+html, body {
+  height: 100%;
+  min-width: 1366px;
+}
+
+/*Start Spinner styles*/
+
+#spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000000;
+  text-align: center;
+  background: rgba(120, 120, 120, 0.4);
+}
+
+#floatingCirclesG {
+  position: relative;
+  display: inline-block;
+  width: 122px;
+  height: 122px;
+  margin: auto;
+  transform: scale(0.6);
+  -o-transform: scale(0.6);
+  -ms-transform: scale(0.6);
+  -webkit-transform: scale(0.6);
+  -moz-transform: scale(0.6);
+}
+
+#spinner-container:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.f_circleG {
+  position: absolute;
+  background-color: #ffffff;
+  height: 22px;
+  width: 22px;
+  border-radius: 11px;
+  -o-border-radius: 11px;
+  -ms-border-radius: 11px;
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  animation-name: f_fadeG;
+  -o-animation-name: f_fadeG;
+  -ms-animation-name: f_fadeG;
+  -webkit-animation-name: f_fadeG;
+  -moz-animation-name: f_fadeG;
+  animation-duration: 0.992s;
+  -o-animation-duration: 0.992s;
+  -ms-animation-duration: 0.992s;
+  -webkit-animation-duration: 0.992s;
+  -moz-animation-duration: 0.992s;
+  animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-direction: normal;
+  -o-animation-direction: normal;
+  -ms-animation-direction: normal;
+  -webkit-animation-direction: normal;
+  -moz-animation-direction: normal;
+}
+
+#frotateG_01 {
+  left: 0;
+  top: 49px;
+  animation-delay: 0.3695s;
+  -o-animation-delay: 0.3695s;
+  -ms-animation-delay: 0.3695s;
+  -webkit-animation-delay: 0.3695s;
+  -moz-animation-delay: 0.3695s;
+}
+
+#frotateG_02 {
+  left: 14px;
+  top: 14px;
+  animation-delay: 0.496s;
+  -o-animation-delay: 0.496s;
+  -ms-animation-delay: 0.496s;
+  -webkit-animation-delay: 0.496s;
+  -moz-animation-delay: 0.496s;
+}
+
+#frotateG_03 {
+  left: 49px;
+  top: 0;
+  animation-delay: 0.6125s;
+  -o-animation-delay: 0.6125s;
+  -ms-animation-delay: 0.6125s;
+  -webkit-animation-delay: 0.6125s;
+  -moz-animation-delay: 0.6125s;
+}
+
+#frotateG_04 {
+  right: 14px;
+  top: 14px;
+  animation-delay: 0.739s;
+  -o-animation-delay: 0.739s;
+  -ms-animation-delay: 0.739s;
+  -webkit-animation-delay: 0.739s;
+  -moz-animation-delay: 0.739s;
+}
+
+#frotateG_05 {
+  right: 0;
+  top: 49px;
+  animation-delay: 0.8655s;
+  -o-animation-delay: 0.8655s;
+  -ms-animation-delay: 0.8655s;
+  -webkit-animation-delay: 0.8655s;
+  -moz-animation-delay: 0.8655s;
+}
+
+#frotateG_06 {
+  right: 14px;
+  bottom: 14px;
+  animation-delay: 0.992s;
+  -o-animation-delay: 0.992s;
+  -ms-animation-delay: 0.992s;
+  -webkit-animation-delay: 0.992s;
+  -moz-animation-delay: 0.992s;
+}
+
+#frotateG_07 {
+  left: 49px;
+  bottom: 0;
+  animation-delay: 1.1085s;
+  -o-animation-delay: 1.1085s;
+  -ms-animation-delay: 1.1085s;
+  -webkit-animation-delay: 1.1085s;
+  -moz-animation-delay: 1.1085s;
+}
+
+#frotateG_08 {
+  left: 14px;
+  bottom: 14px;
+  animation-delay: 1.235s;
+  -o-animation-delay: 1.235s;
+  -ms-animation-delay: 1.235s;
+  -webkit-animation-delay: 1.235s;
+  -moz-animation-delay: 1.235s;
+}
+
+@keyframes f_fadeG {
+  0% {
+    background-color: #000000;
+  }
+
+  100% {
+    background-color: #ffffff;
+  }
+}
+
+@-o-keyframes f_fadeG {
+  0% {
+    background-color: #000000;
+  }
+
+  100% {
+    background-color: #ffffff;
+  }
+}
+
+@-ms-keyframes f_fadeG {
+  0% {
+    background-color: #000000;
+  }
+
+  100% {
+    background-color: #ffffff;
+  }
+}
+
+@-webkit-keyframes f_fadeG {
+  0% {
+    background-color: #000000;
+  }
+
+  100% {
+    background-color: #ffffff;
+  }
+}
+
+@-moz-keyframes f_fadeG {
+  0% {
+    background-color: #000000;
+  }
+
+  100% {
+    background-color: #ffffff;
+  }
+}
+
+/*End Spinner styles*/

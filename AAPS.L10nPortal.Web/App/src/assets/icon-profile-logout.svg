@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-profile-logout</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="01_Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01.2_MyProjects_Homepage_Userdrop2" transform="translate(-1073.000000, -193.000000)">
+            <g id="User_dropdown" transform="translate(1054.000000, 59.000000)">
+                <g id="item" transform="translate(0.000000, 126.000000)">
+                    <g id="icon-profile-logout" transform="translate(19.000000, 8.000000)">
+                        <g>
+                            <path d="M18,19 C18,19 17.2761424,20 17,20 L10,20 L9,19 L9,15 C9,14.7238576 9.22385763,14.5 9.5,14.5 C9.77614237,14.5 10,14.7238576 10,15 L10,19 L17,19 L17,6 L10,6 L10,10 C10,10.2761424 9.77614237,10.5 9.5,10.5 C9.22385763,10.5 9,10.2761424 9,10 L9,6 L10,5 L17,5 L18,6 L18,19 Z M11.645,14.145 C11.5023119,14.2671949 11.440159,14.4590592 11.4840949,14.6417095 C11.5280308,14.8243598 11.6706402,14.9669692 11.8532905,15.0109051 C12.0359408,15.054841 12.2278051,14.9926881 12.35,14.85 L14.35,12.85 C14.4446563,12.7561167 14.4978992,12.6283188 14.4978992,12.495 C14.4978992,12.3616812 14.4446563,12.2338833 14.35,12.14 L12.35,10.14 C12.1516199,9.9701116 11.8559029,9.98153387 11.6712184,10.1662184 C11.4865339,10.3509029 11.4751116,10.6466199 11.645,10.845 L12.795,12 L5.5,12 C5.22385763,12 5,12.2238576 5,12.5 C5,12.7761424 5.22385763,13 5.5,13 L12.795,13 L11.645,14.145 Z" id="Shape" fill="#000000"></path>
+                            <rect id="Rectangle-path" x="0" y="0" width="24" height="24"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

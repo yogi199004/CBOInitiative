@@ -1,0 +1,58 @@
+
+<div class="dropdown-menu lten-sort-filter-dropdown" aria-labelledby="dropdownMenuLink">
+  <div class="sort-sec row">
+    <div class="title col-2">Sort</div>
+    <div class="col-2">
+
+      <i class="bi bi-sort-alpha-down" type="button"
+         [ngClass]="{'bi-active':isUpActive()}"
+         (click)="sort(dropDownFilterData.name, 'up')"
+         *ngIf="dropDownFilterData.name != 'UpdatedDate'"></i>
+
+      <i class="bi bi-sort-numeric-down" type="button"
+         [ngClass]="{'bi-active':isUpActive()}"
+         (click)="sort(dropDownFilterData.name, 'up')"
+         *ngIf="dropDownFilterData.name == 'UpdatedDate'"></i>
+
+    </div>
+    <div class="col-4">
+      <i class="bi bi-sort-alpha-down-alt" type="button"
+         [ngClass]="{'bi-active':isDownActive()}"
+         (click)="sort(dropDownFilterData.name, 'down')"
+         *ngIf="dropDownFilterData.name != 'UpdatedDate'"></i>
+
+      <i class="bi bi-sort-numeric-down-alt" type="button"
+         [ngClass]="{'bi-active':isDownActive()}"
+         (click)="sort(dropDownFilterData.name, 'down')"
+         *ngIf="dropDownFilterData.name == 'UpdatedDate'"></i>
+
+    </div>
+  </div>
+  <div class="dropdown-divider"></div>
+  <div class="title">Filter</div>
+  <div class="filter-sec">
+
+    <div class="searchTerm form-group" *ngIf="showSearchTermInput()">
+      <input type="text" class="form-control" id="search" aria-describedby="search key" placeholder="Search by Key" [(ngModel)]="assetSearchTerm">
+    </div>
+
+    <div class="checkbox-container form-group form-check portal-filter-form">
+      <input class="form-check-input lten-input" type="checkbox" [checked]="checkForChecked('all')"
+             id="all" (change)="selectAll($event)">
+      <label class="form-check-label" for="all">(Select all)</label>
+    </div>
+    <div class="checkbox-container form-group form-check portal-filter-form" *ngFor="let item of dropDownFilterData.data | filter:assetSearchTerm">
+      <input class="form-check-input lten-input" type="checkbox" [checked]="checkForChecked(item)"
+             id="{{item}}" value="{{item}}" (change)="onfilterSelect($event)">
+      <label class="form-check-label" for="{{item}}">{{dropDownFilterData.name != 'UpdatedDate' || item == 'empty' ? item :   item | date: 'longDate'  }}</label>
+    </div>
+  </div>
+  <div class="row no-margin">
+    <div class="col-6 no-padding">
+      <button class="lten-bt lten-bt-primary lten-bt-block" (click)="applyFilter()">Apply</button>
+    </div>
+    <div class="col-6">
+      <button class="lten-bt lten-bt-link ">Cancel</button>
+    </div>
+  </div>
+</div>

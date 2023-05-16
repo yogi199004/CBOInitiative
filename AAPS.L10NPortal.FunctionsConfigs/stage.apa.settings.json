@@ -1,0 +1,19 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "Server": "{endpointuri}",
+    "PrimaryKey": "{primarykey}",
+    "PrimaryKeyReadOnly": "readonlykey",
+    "Databaseid": "L10nPortal",
+    "OmniaContainerId": "OmniaContainer",
+    "LevviaContainerId": "LevviaContainer",
+    "GeneralAppContainerId": "GeneralAppsContainer",
+    "SyncSchedule": "0 */30 * * * *",
+    "Regions": "Japan East",
+    "OtherRegions": "West Europe,East US 2",
+    "StorageAccountConnectionString": "DefaultEndpointsProtocol=https;AccountName=sl10nportalapasas;AccountKey=${AccountKey};EndpointSuffix=core.windows.net",
+    "keyVaultUri": "https://stagel10nportalapakv.vault.azure.net",
+    "UserAssignedIdentity": "e677e5a3-4247-4252-ae20-7d434af864e9",
+    "StorageContainer": "assets"
+  }
+}

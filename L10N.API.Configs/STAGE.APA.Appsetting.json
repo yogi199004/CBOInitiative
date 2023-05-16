@@ -1,0 +1,52 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AzureAd": {
+    "Instance": "https://login.microsoftonline.com/",
+    "Domain": "deloitte.onmicrosoft.com",
+    "TenantId": "36da45f1-dd2c-4d1f-af13-5abe46b99921",
+    "ClientId": "bca4d738-9036-4126-aee2-007654036a61",
+    "CallbackPath": "/signin-oidc",
+    "SignedOutCallbackPath ": "https://login.microsoftonline.com/common/oauth2/logout"
+  },
+  "CosmosDb": {
+    "CosmosServerURI": "serveruri",
+    "PrimaryKeyReadOnly": "readonlykey",
+    "Databaseid": "L10nPortal",
+    "OmniaContainerId": "OmniaContainer",
+    "LevviaContainerId": "LevviaContainer",
+    "GeneralAppContainerId": "GeneralAppsContainer",
+    "Regions": "Japan East",
+    "OtherRegions": "West Europe,East US 2"
+  },
+  "DeloitteCore": {
+    "Logging": {
+      "LogLevel": {
+        "Default": "Information",
+        "Microsoft": "Information",
+        "Microsoft.Hosting.Lifetime": "Information"
+      },
+      "WriteTo": [
+        {
+          "Name": "AppInsights",
+          "ConnectionString": "InstrumentationKey=9c89fd0f-5be0-4977-ae9e-d82c0f6f0d26;IngestionEndpoint=https://japaneast-0.in.applicationinsights.azure.com/;LiveEndpoint=https://japaneast.livediagnostics.monitor.azure.com/;",
+          "CloudRoleName": "L10nPortal_v2"
+        }
+      ],
+      "ApplicationName": "AAPS.L10NPortalV2.API"
+    }
+  },
+  "L10nKeyVaultUri": "https://stagel10nportalapakv.vault.azure.net",
+  "StorageAccountConnectionString": "DefaultEndpointsProtocol=https;AccountName=stagel10nportalapasa;AccountKey=${AccountKey};EndpointSuffix=core.windows.net",
+  "StorageContainer": "assets",
+  "Geos": "Ame,Ema,Apa",
+  "AllowedHosts": "*",
+  "ApplicationInsights": {
+    "ConnectionString": "InstrumentationKey=9c89fd0f-5be0-4977-ae9e-d82c0f6f0d26;IngestionEndpoint=https://japaneast-0.in.applicationinsights.azure.com/;LiveEndpoint=https://japaneast.livediagnostics.monitor.azure.com/;"
+  },
+  "UserAssignedIdentity": "e677e5a3-4247-4252-ae20-7d434af864e9"
+}

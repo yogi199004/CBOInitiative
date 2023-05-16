@@ -1,0 +1,33 @@
+<div class="modal fade"
+  id="timeoutModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="timeoutModalTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered"
+    role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"
+          id="timeoutModalTitle">Session Timeout Warning</h5>
+      </div>
+      <div class="modal-body">
+        <div class="appTimeout">
+          Your session will expire in
+          <div class="expireTime"
+            [ngClass]="{ warning : time <= 31000 }">
+            {{time | milisecondsToMinutesPipe}}<span>:</span>{{time | milisecondsToSecondsPipe}}
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button"
+          class="btn btn-secondary"
+          (click)="logout()">Log Out</button>
+        <button type="button"
+          class="btn btn-primary"
+          (click)="continueSession()">Continue Session</button>
+      </div>
+    </div>
+  </div>
+</div>

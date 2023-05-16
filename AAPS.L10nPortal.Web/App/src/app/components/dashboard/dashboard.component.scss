@@ -1,0 +1,86 @@
+th {
+  line-height: 20px;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #313131;
+  font-size: 15px;
+  white-space: nowrap;
+  font-weight: 600;
+  a{
+    color: #313131;
+  }
+  a:hover{
+    text-decoration: none;
+  }
+}
+
+.textAlignCenter {
+  text-align: left;
+}
+
+.file-input {
+  display: none;
+}
+
+.text-button {
+  background-color: #fff;
+  border-color: #e5e3e1;
+  padding: 6px 24px;
+  border-radius: 18px;
+  color: #53565a;
+  float: right;
+  margin: 0px 10px 10px;
+}
+
+
+.img-button {
+  background-color: transparent;
+  vertical-align: baseline;
+  text-decoration: none;
+  margin: 0;
+  outline: 0;
+  border: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.img-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+.img-button.upload-arrow {
+  background-image: url('/assets/upload.svg');
+}
+
+.img-button.download-arrow {
+  background-image: url('/assets/download.svg');
+}
+
+.img-button.edit-button {
+  background-image: url('/assets/icon/editIconHover.png');
+}
+
+.img-button.delete-button {
+  background-image: url('/assets/icon/deleteGray.png');
+}
+
+.modal div.row {
+  padding: 4px;
+}
+
+.modal div.row input, .modal div.row select {
+  width: 100%;
+  height: 30px;
+}
+
+.modal .hasError {
+  box-shadow: 0 0 10px 2px lightcoral;
+}

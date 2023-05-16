@@ -1,0 +1,25 @@
+{
+    "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+
+
+    // Cosmos Section
+    "Server": "https://devl10nportalamecosmosdb.documents.azure.com:443/",
+    "PrimaryKey": "0bA6Lme17Tl8dn0Kqe1oe7VB8qZUteOm8Uz7I5lRn7gDYyMJU9JaL8tqih7PYgH4qrgmMdJbEUnVOqFuFZYEkg==",
+    "Databaseid": "L10nPortal",
+    "OmniaContainerId": "OmniaContainer",
+    "LevviaContainerId": "LevviaContainer",
+    "GeneralAppContainerId": "GeneralAppsContainer",
+    "Regions": "East US 2",
+    "OtherRegions": "West Europe,Japan East",
+    "APPINSIGHTS_INSTRUMENTATIONKEY": "InstrumentationKey=57ba4cf8-5c29-4257-b762-d0aa8e706ecc;IngestionEndpoint=https://eastus2-0.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus2.livediagnostics.monitor.azure.com/;",
+    "SyncSchedule": "0 */15 * * * *",
+    //"AzureServiceConnectionString": "RunAs=App;AppId=21b40eea-856c-4a7b-a73c-ea893454bd14;TenantId=36da45f1-dd2c-4d1f-af13-5abe46b99921;CertificateThumbprint=5F4954B5F5D777A7DA631BA9B1916A248A76047E;CertificateStoreLocation=CurrentUser",
+    "keyVaultUri": "https://devl10nportalamekv.vault.azure.net",
+    //L10N DB connection string
+    "L10nPortal": "Server=tcp:devl10nportalamesqlserver.database.windows.net,1433;Database=L10nPortal;User ID=L10nPortal_User;Password=BOJVecipkg3208541;Encrypt=True;TrustServerCertificate=False;Connection Timeout=100;Pooling=True;"
+    //"L10nPortal": "Data Source=10.146.146.6;Initial Catalog=L10nPortal;Persist Security Info=True;User ID=L10nPortal_User;Password=vToEtSddc3ZzBugKNq-jp%^MPiiEo!2C;Pooling=True"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AzureAd": {
+    "Instance": "https://login.microsoftonline.com/",
+    "Domain": "deloitte.onmicrosoft.com",
+    "TenantId": "36da45f1-dd2c-4d1f-af13-5abe46b99921",
+    "ClientId": "94e3b308-ee50-44ae-a5a5-4a81cd9e4043",
+    "CallbackPath": "/signin-oidc",
+    "SignedOutCallbackPath ": "https://login.microsoftonline.com/common/oauth2/logout"
+  },
+  "CosmosDb": {
+    "CosmosServerURI": "serveruri",
+    "PrimaryKeyReadOnly": "readonlykey",
+    "Databaseid": "L10nPortal",
+    "OmniaContainerId": "OmniaContainer",
+    "LevviaContainerId": "LevviaContainer",
+    "GeneralAppContainerId": "GeneralAppsContainer",
+    "Regions": "China East 2",
+    "OtherRegions": "China North 2"
+  },
+  "DeloitteCore": {
+    "Logging": {
+      "LogLevel": {
+        "Default": "Information",
+        "Microsoft": "Information",
+        "Microsoft.Hosting.Lifetime": "Information"
+      },
+      "WriteTo": [
+        {
+          "Name": "AppInsights",
+          "ConnectionString": "InstrumentationKey=aa2eae94-00e9-c059-bb36-f13c6199fdda;EndpointSuffix=applicationinsights.azure.cn;IngestionEndpoint=https://chinaeast2-0.in.applicationinsights.azure.cn/;AADAudience=https://monitor.azure.cn/",
+          "CloudRoleName": "L10nPortal_v2"
+        }
+      ],
+      "ApplicationName": "AAPS.L10NPortalV2.API"
+    }
+  },
+  "L10nKeyVaultUri": "https://stagel10nportalcnkv.vault.azure.cn/",
+  "StorageAccountConnectionString": "DefaultEndpointsProtocol=https;AccountName=stagel10nportalcnsa;AccountKey=${AccountKey};EndpointSuffix=core.chinacloudapi.cn",
+  "StorageContainer": "assets",
+  "Geos": "CN",
+  "ApplicationName": "L10nV2_API",
+  "AllowedHosts": "*",
+  "ApplicationInsights": {
+    "ConnectionString": "InstrumentationKey=aa2eae94-00e9-c059-bb36-f13c6199fdda;EndpointSuffix=applicationinsights.azure.cn;IngestionEndpoint=https://chinaeast2-0.in.applicationinsights.azure.cn/;AADAudience=https://monitor.azure.cn/"
+  },
+  "UserAssignedIdentity": "ac8ae679-4a60-41df-bcaa-052175af74e8"
+}

@@ -1,0 +1,20 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "Server": "{endpointuri}",
+    "PrimaryKey": "{primarykey}",
+    "PrimaryKeyReadOnly": "readonlykey",
+    "Databaseid": "L10nPortal",
+    "OmniaContainerId": "OmniaContainer",
+    "LevviaContainerId": "LevviaContainer",
+    "GeneralAppContainerId": "GeneralAppsContainer",
+    "Regions": "Japan East",
+    "OtherRegions": "West Europe,East US 2",
+    "ApplicationName": "AAPS.L10NPortal.FunctionAPI",
+    "SyncSchedule": "0 */15 * * * *",
+    "StorageAccountConnectionString": "DefaultEndpointsProtocol=https;AccountName=dl10nportalapasas;AccountKey=${AccountKey};EndpointSuffix=core.windows.net",
+    "keyVaultUri": "https://devl10nportalapakv.vault.azure.net",
+    "UserAssignedIdentity": "5fade475-adf7-4b7f-a1d2-65374349bb52",
+    "StorageContainer": "assets"
+  }
+}

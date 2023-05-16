@@ -1,0 +1,24 @@
+{
+    "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "APPINSIGHTS_INSTRUMENTATIONKEY": "removed",
+    "AzureServiceConnectionString": "removed",
+
+    // Cosmos Section
+    "Server": "removed",
+    "PrimaryKey": "removed",
+    "Databaseid": "L10nPortal",
+    "OmniaContainerId": "Removed",
+    "LevviaContainerId": "removed",
+    "GeneralAppContainerId": "removed",
+    "Regions": "East US 2",
+    "OtherRegions": "West Europe,Japan East",
+    // end of cosmos section
+    "ApplicationName": "AAPS.L10NPortal.V1.API",
+    "StorageAccountConnectionString": "removed",
+    "UserAssignedIdentity": "removed",
+    "StorageAccountAccessKey": "removed"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "Server": "{endpointuri}",
+    "PrimaryKey": "{primarykey}",
+    "PrimaryKeyReadOnly": "{readonlykey}",
+    "Databaseid": "L10nPortal",
+    "OmniaContainerId": "OmniaContainer",
+    "LevviaContainerId": "LevviaContainer",
+    "GeneralAppContainerId": "GeneralAppsContainer",
+    "Regions": "East US 2",
+    "OtherRegions": "West Europe,Japan East",
+    "SyncSchedule": "0 */60 * * * *",
+    //L10N DB connection string
+    "L10nPortal": "Server=tcp:stagel10nportalamesqlserver.database.windows.net,1433;Database=L10nPortal;User ID=L10nPortal_User;Password=$(Password);Encrypt=True;TrustServerCertificate=False;Connection Timeout=100;Pooling=True;",
+    "StorageConnectionString": "DefaultEndpointsProtocol=https;AccountName=sl10nportalamesas;AccountKey=${AccountKey};EndpointSuffix=core.windows.net",
+    "keyVaultUri": "https://stagel10nportalamekv.vault.azure.net",
+    "UserAssignedIdentity": "1ce22dde-e97f-45b8-b9df-922c26df12ff",
+    "StorageContainer": "assets"
+  },
+  "ConnectionStrings": {
+    "L10nPortal": "Server=tcp:stagel10nportalamesqlserver.database.windows.net,1433;Database=L10nPortal;User ID=L10nPortal_User;Password=$(Password);Encrypt=True;TrustServerCertificate=False;Connection Timeout=100;Pooling=True;"
+  }
+
+}

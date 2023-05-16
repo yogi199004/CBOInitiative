@@ -1,0 +1,48 @@
+<div class="container-fluid" *ngIf="pageLoadComplete">
+  <div class="metadata-container">
+    <fieldset>
+      <div><span>Application Name : </span><span>{{applicationName}}</span></div>
+      <div><span>Locale : </span><span>{{localeCode}}</span></div>
+    </fieldset>
+  </div>
+
+  <table class="table table-striped textAlignCenter assets-list">
+    <tr>
+      <th>
+        <a href="#" class="link-txt" role="button" id="dropdownMenuLink" data-toggle="dropdown">Key Name <i
+            class="bi bi-caret-down-fill"></i></a>
+
+        <app-sort-filter (sortFilterFromChild)="sortFilterFromChild($event)"
+          [dropDownFilterData]="filterdropDownData?.Key" [currentSortedColumn]="currentSortColumn">
+        </app-sort-filter>
+      </th>
+      <th>
+
+        <a href="#" class="link-txt" role="button" id="dropdownMenuLink" data-toggle="dropdown">Last Modified Date <i
+            class="bi bi-caret-down-fill"></i></a>
+
+        <app-sort-filter (sortFilterFromChild)="sortFilterFromChild($event)"
+          [dropDownFilterData]="filterdropDownData?.UpdatedDate" [currentSortedColumn]="currentSortColumn">
+        </app-sort-filter>
+      </th>
+      <th><span>Upload / Download</span></th>
+      <th>
+        <button class="btn btn-outline-primary btn-clearfilter" *ngIf="filterApplied" (click)="clearFilter()">Clear all
+          filters
+          <i class="bi bi-x"></i></button>
+      </th>
+    </tr>
+    <tr *ngFor="let asset of assets; let i = index">
+      <td><span class="dot" [ngClass]="{changed: asset.Changed}"></span>{{asset.Key}}</td>
+      <td>{{asset.UpdatedDate | date : 'medium'}}</td>
+      <td>
+        <input type="file" id="file-input-{{i}}" class="file-input" (change)="uploadAsset($event, i)" />
+        <button class="img-button upload-arrow" (click)="browseFile('file-input-', i)"></button>
+        <button class="img-button download-arrow" (click)="downloadAsset(asset.KeyId)"
+          [disabled]="!asset.Value"></button>
+      </td>
+      <td></td>
+    </tr>
+  </table>
+  <app-empty-results *ngIf="assets && assets.length == 0 && filterApplied"></app-empty-results>
+</div>

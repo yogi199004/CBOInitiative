@@ -1,0 +1,36 @@
+.appTimeout {
+  text-align: center;
+}
+
+.appTimeout .expireTime {
+  font-size: 86px;
+  color: #424242;
+  margin: 22px 0 28px 0;
+  font-family: "Open Sans Regular";
+  font-weight: 100;
+}
+
+.appTimeout .expireTime span {
+  color: #B4B4B4;
+  margin: 0 18px;
+  font-size: 54px;
+  vertical-align: 16px;
+}
+
+.appTimeout .expireTime.warning {
+  color: #CF102D;
+}
+
+@font-face {
+  font-family: 'Open Sans Regular';
+  src: url("/Content/fonts/Open Sans/opensans-regular-webfont.ttf");
+  src: url('/Content/fonts/Open Sans/opensans-regular-webfont.eot');
+  src: url('/Content/fonts/Open Sans/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'), url('/Content/fonts/Open Sans/opensans-regular-webfont.woff') format('woff'), url('/Content/fonts/Open Sans/opensans-regular-webfont.ttf') format('truetype'), url('/Content/fonts/Open Sans/opensans-regular-webfont.svg#open_sansbold') format('svg');
+}
+
+@font-face {
+  font-family: 'Open Sans light';
+  src: url("/Content/fonts/Open Sans/opensans-light-webfont.ttf");
+  src: url('/Content/fonts/Open Sans/opensans-light-webfont.eot');
+  src: url('/Content/fonts/Open Sans/opensans-light-webfont.eot?#iefix') format('embedded-opentype'), url('/Content/fonts/Open Sans/opensans-light-webfont.woff') format('woff'), url('/Content/fonts/Open Sans/opensans-light-webfont.ttf') format('truetype'), url('/Content/fonts/Open Sans/opensans-light-webfont.svg#open_sansbold') format('svg');
+}

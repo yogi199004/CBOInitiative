@@ -1,0 +1,53 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AzureAd": {
+    "Instance": "https://login.microsoftonline.com/",
+    "Domain": "deloitte.onmicrosoft.com",
+    "TenantId": "36da45f1-dd2c-4d1f-af13-5abe46b99921",
+    "ClientId": "21b40eea-856c-4a7b-a73c-ea893454bd14",
+    "CallbackPath": "/signin-oidc",
+    "SignedOutCallbackPath ": "https://login.microsoftonline.com/common/oauth2/logout"
+  },
+  "CosmosDb": {
+    "CosmosServerURI": "serveruri",
+    "PrimaryKeyReadOnly": "readonlykey",
+    "Databaseid": "L10nPortal",
+    "OmniaContainerId": "OmniaContainer",
+    "LevviaContainerId": "LevviaContainer",
+    "GeneralAppContainerId": "GeneralAppsContainer",
+    "Regions": "East US 2",
+    "OtherRegions": "West Europe,Japan East"
+  },
+  "DeloitteCore": {
+    "Logging": {
+      "LogLevel": {
+        "Default": "Information",
+        "Microsoft": "Information",
+        "Microsoft.Hosting.Lifetime": "Information"
+      },
+      "WriteTo": [
+        {
+          "Name": "AppInsights",
+          "ConnectionString": "InstrumentationKey=405d8ed8-f15b-4e48-9ab4-b64e674088d0;IngestionEndpoint=https://eastus2-0.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus2.livediagnostics.monitor.azure.com/;",
+          "CloudRoleName": "L10nPortal_v2"
+        }
+      ],
+      "ApplicationName": "AAPS.L10NPortalV2.API"
+    }
+  },
+  "L10nKeyVaultUri": "https://loadl10nportalamekv.vault.azure.net",
+  "StorageAccountConnectionString": "DefaultEndpointsProtocol=https;AccountName=loadl10nportalamesa;AccountKey=${AccountKey};EndpointSuffix=core.windows.net",
+  "StorageContainer": "assets",
+  "Geos": "Ame,Ema,Apa",
+  "ApplicationName": "L10nV2_API",
+  "AllowedHosts": "*",
+  "ApplicationInsights": {
+    "ConnectionString": "InstrumentationKey=405d8ed8-f15b-4e48-9ab4-b64e674088d0;IngestionEndpoint=https://eastus2-0.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus2.livediagnostics.monitor.azure.com/;"
+  },
+  "UserAssignedIdentity": "d2a8b983-b37b-4afc-98d6-005dbd5adf9c"
+}

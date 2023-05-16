@@ -1,0 +1,51 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <base href="/">
+    <meta name="viewport" content="width=device-width" />
+    <title>L10n Portal</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <!-- OneTrust Cookies Consent Notice start for l10nportal.aaps.deloitte.com -->
+
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8"
+            data-domain-script="@ViewBag.cookieDomain"></script>
+    <script type="text/javascript">
+        function OptanonWrapper() { }
+    </script>
+</head>
+<body>
+    <input id="__RequestVerificationToken" type="hidden" value="@ViewBag.__RequestVerificationToken" />
+
+    <div id="spinner-container">
+        <span id="floatingCirclesG">
+            <span class="f_circleG" id="frotateG_01"></span>
+            <span class="f_circleG" id="frotateG_02"></span>
+            <span class="f_circleG" id="frotateG_03"></span>
+            <span class="f_circleG" id="frotateG_04"></span>
+            <span class="f_circleG" id="frotateG_05"></span>
+            <span class="f_circleG" id="frotateG_06"></span>
+            <span class="f_circleG" id="frotateG_07"></span>
+            <span class="f_circleG" id="frotateG_08"></span>
+        </span>
+    </div>
+
+    @* Setting for ApplicationInsights *@
+    <script type="text/javascript">
+        ApplicationInsights = "@ViewBag.ApplicationInsights";
+    </script>
+
+    <app-root></app-root>
+
+    <link rel="stylesheet" href="styles.css" />
+    <script type="text/javascript" src="runtime.js"></script>
+    <script type="text/javascript" src="polyfills-es5.js"></script>
+    <script type="text/javascript" src="polyfills.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>

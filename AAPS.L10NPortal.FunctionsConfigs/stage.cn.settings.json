@@ -1,0 +1,19 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "Server": "{endpointuri}",
+    "PrimaryKey": "{primarykey}",
+    "PrimaryKeyReadOnly": "readonlykey",
+    "Databaseid": "L10nPortal",
+    "OmniaContainerId": "OmniaContainer",
+    "LevviaContainerId": "LevviaContainer",
+    "GeneralAppContainerId": "GeneralAppsContainer",
+    "SyncSchedule": "0 */30 * * * *",
+    "Regions": "Japan East",
+    "OtherRegions": "West Europe,East US 2",
+    "StorageAccountConnectionString": "DefaultEndpointsProtocol=https;AccountName=sl10nportalcnsas;AccountKey=${AccountKey};EndpointSuffix=core.chinacloudapi.cn",
+    "keyVaultUri": "https://stagel10nportalcnkv.vault.azure.cn",
+    "UserAssignedIdentity": "ac8ae679-4a60-41df-bcaa-052175af74e8",
+    "StorageContainer": "assets"
+  }
+}

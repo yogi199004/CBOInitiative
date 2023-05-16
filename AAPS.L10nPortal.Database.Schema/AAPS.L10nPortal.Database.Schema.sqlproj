@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>AAPS.L10nPortal.Database.Schema</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{1b9ae975-2cf7-4e81-acf3-fe6821ebfbc2}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>AAPS.L10nPortal.Database.Schema</RootNamespace>
+    <AssemblyName>AAPS.L10nPortal.Database.Schema</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <Containment>Partial</Containment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="PostDeploymentScripts" />
+    <Folder Include="dbo\Views" />
+    <Folder Include="dbo\Custom Types" />
+    <Folder Include="dbo\Tables" />
+    <Folder Include="dbo\User Defined Types\" />
+    <Folder Include="PreDeploymentScripts" />
+    <Folder Include="PostDeploymentScripts\R1.1" />
+    <Folder Include="dbo\User Defined Functions" />
+    <Folder Include="dbo\Triggers" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="PostDeploymentScripts\Post-Deployment.sql" />
+    <None Include="PostDeploymentScripts\Dictionaries.sql" />
+    <Build Include="dbo\Stored Procedures\spUserApplicationLocaleGetList.sql" />
+    <Build Include="dbo\Stored Procedures\spApplicationLocaleValueGetList.sql" />
+    <Build Include="dbo\Stored Procedures\spUserApplicationLocaleGetById.sql" />
+    <Build Include="dbo\Views\UserApplicationLocaleView.sql" />
+    <Build Include="dbo\Custom Types\ApplicationLocaleValueCreateType.sql" />
+    <Build Include="dbo\Stored Procedures\spApplicationLocaleValueMerge.sql" />
+    <Build Include="dbo\Stored Procedures\spApplicationLocaleAssetGetList.sql" />
+    <Build Include="dbo\Stored Procedures\spUserApplicationLocaleCheckPermissions.sql" />
+    <Build Include="dbo\Stored Procedures\throwPermissionException.sql" />
+    <Build Include="dbo\Stored Procedures\spApplicationLocaleAssetUpdate.sql" />
+    <Build Include="dbo\Views\ApplicationLocaleAssetView.sql" />
+    <Build Include="dbo\Stored Procedures\spApplicationLocaleGetList.sql" />
+    <Build Include="dbo\Views\ApplicationLocaleView.sql" />
+    <Build Include="dbo\Stored Procedures\spApplicationLocaleAssetGet.sql" />
+    <Build Include="dbo\Views\ApplicationLocaleResourceKeyValueView.sql" />
+    <Build Include="dbo\Stored Procedures\spApplicationLocaleResourceKeyValueGetList.sql" />
+    <None Include="PostDeploymentScripts\RoleMasters.sql" />
+    <None Include="PostDeploymentScripts\UserRoleMapping.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Application.sql" />
+    <Build Include="dbo\Tables\ApplicationLocale.sql" />
+    <Build Include="dbo\Tables\ApplicationResourceKey.sql" />
+    <Build Include="dbo\Tables\ApplicationResourceKeyType.sql" />
+    <Build Include="dbo\Tables\ApplicationResourceValue.sql" />
+    <Build Include="dbo\Tables\Language.sql" />
+    <Build Include="dbo\Tables\Locale.sql" />
+    <Build Include="dbo\Tables\User.sql" />
+    <Build Include="dbo\Tables\UserApplicationLocale.sql" />
+    <Build Include="dbo\Stored Procedures\spMergeEnUsResources.sql" />
+    <Build Include="dbo\User Defined Types\ResourceKeyValue.sql" />
+    <Build Include="dbo\Views\ApplicationLocaleKeyValueCountView.sql" />
+    <Build Include="dbo\Views\ApplicationKeyValueCountView.sql" />
+    <Build Include="dbo\Stored Procedures\spUserApplicationGet.sql" />
+    <Build Include="dbo\Views\UserApplicationView.sql" />
+    <Build Include="dbo\Stored Procedures\spUserApplicationLocaleCreate.sql" />
+    <Build Include="dbo\Stored Procedures\spUserApplicationManagerCheckPermissions.sql" />
+    <Build Include="dbo\Stored Procedures\throwApplicationNotFoundException.sql" />
+    <Build Include="dbo\Stored Procedures\throwLocaleNotFoundException.sql" />
+    <Build Include="dbo\Stored Procedures\throwApplicationLocaleAlreadyAssignedException.sql" />
+    <Build Include="dbo\Stored Procedures\spUserCreate.sql" />
+    <Build Include="dbo\Stored Procedures\spUserApplicationLocaleReassign.sql" />
+    <Build Include="dbo\Stored Procedures\spUserApplicationLocaleGetByIdInternal.sql" />
+    <Build Include="dbo\Stored Procedures\spLocaleGetList.sql" />
+    <Build Include="dbo\Stored Procedures\spApplicationOriginalValueMerge.sql" />
+    <Build Include="dbo\Stored Procedures\spApplicationLocaleDelete.sql" />
+    <None Include="PostDeploymentScripts\AlterDatabaseAddUser.sql" />
+    <None Include="PostDeploymentScripts\InitApplicationManager.sql" />
+    <None Include="PostDeploymentScripts\InitApplications.sql" />
+    <Build Include="dbo\Tables\RoleMaster.sql" />
+    <Build Include="dbo\Tables\UserRolemapping.sql" />
+    <Build Include="dbo\Stored Procedures\spUserroleMappingGet.sql" />
+    <Build Include="dbo\Stored Procedures\spOnboardApplication.sql" />
+    <Build Include="dbo\Stored Procedures\throwApplicationAlreadyOnboardedException.sql" />
+    <Build Include="dbo\Stored Procedures\throwOmniaRedisInstanceFulledException.sql" />
+    <Build Include="dbo\Stored Procedures\throwRedisInstanceTwoFulledException.sql" />
+    <Build Include="dbo\Stored Procedures\spAddAppManager.sql" />
+    <Build Include="dbo\User Defined Functions\fn_GetAppManagerCount.sql" />
+    <None Include="PostDeploymentScripts\AppName-Update.sql" />
+    <Build Include="dbo\Stored Procedures\throwDualAppManagerException.sql" />
+    <Build Include="dbo\Views\ApplicationAssetCountView.sql" />
+    <Build Include="dbo\Stored Procedures\spApplicationLocaleAssetKeysWithAssetGetList.sql" />
+    <Build Include="dbo\Stored Procedures\spGetApplications.sql" />
+    <Build Include="dbo\Stored Procedures\spGetAppsLocaleSpecificKeyValues.sql" />
+    <Build Include="dbo\Stored Procedures\spGetAppSpecificMetaData.sql" />
+    <Build Include="dbo\Tables\SyncConfiguration.sql" />
+    <Build Include="dbo\Stored Procedures\spUpdateSyncConfiguration.sql" />
+    <Build Include="dbo\Tables\AuditApplicationAndLocale.sql" />
+    <Build Include="dbo\Triggers\DeleteAppLocaleTrigger.sql" />
+    <Build Include="dbo\Stored Procedures\spGetDeletedLocales.sql" />
+    <Build Include="dbo\Tables\AuditApplicationResourceKey.sql" />
+    <Build Include="dbo\Triggers\DeleteResourceKeyTrigger.sql" />
+    <Build Include="dbo\Stored Procedures\spGetAppsWithDeletedKey.sql" />
+    <Build Include="dbo\Stored Procedures\spGetKeyValuesForAppWithDeletedKey.sql" />
+    <Build Include="dbo\Stored Procedures\spCheckAdminPermissions.sql" />
+    <Build Include="dbo\Stored Procedures\spCheckAppMgrPermissions.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="PreDeploymentScripts\Script.PreDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PostDeploymentScripts\R1.1\ApplicationInterchange.sql" />
+    <None Include="PostDeploymentScripts\InitSyncConfiguration.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="Environment">
+      <DefaultValue>PROD</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
+</Project>

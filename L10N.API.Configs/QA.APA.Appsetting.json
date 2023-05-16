@@ -1,0 +1,52 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AzureAd": {
+    "Instance": "https://login.microsoftonline.com/",
+    "Domain": "deloitte.onmicrosoft.com",
+    "TenantId": "36da45f1-dd2c-4d1f-af13-5abe46b99921",
+    "ClientId": "21b40eea-856c-4a7b-a73c-ea893454bd14",
+    "CallbackPath": "/signin-oidc",
+    "SignedOutCallbackPath ": "https://login.microsoftonline.com/common/oauth2/logout"
+  },
+  "CosmosDb": {
+    "CosmosServerURI": "serveruri",
+    "PrimaryKeyReadOnly": "readonlykey",
+    "Databaseid": "L10nPortal",
+    "OmniaContainerId": "OmniaContainer",
+    "LevviaContainerId": "LevviaContainer",
+    "GeneralAppContainerId": "GeneralAppsContainer",
+    "Regions": "Japan East",
+    "OtherRegions": "West Europe,East US 2"
+  },
+  "DeloitteCore": {
+    "Logging": {
+      "LogLevel": {
+        "Default": "Information",
+        "Microsoft": "Information",
+        "Microsoft.Hosting.Lifetime": "Information"
+      },
+      "WriteTo": [
+        {
+          "Name": "AppInsights",
+          "ConnectionString": "InstrumentationKey=ce454f55-07fb-4e83-89de-a5bf77676c82;IngestionEndpoint=https://japaneast-0.in.applicationinsights.azure.com/;LiveEndpoint=https://japaneast.livediagnostics.monitor.azure.com/;",
+          "CloudRoleName": "L10nPortal_v2"
+        }
+      ],
+      "ApplicationName": "AAPS.L10NPortalV2.API"
+    }
+  },
+  "L10nKeyVaultUri": "https://qal10nportalapakv.vault.azure.net",
+  "StorageAccountConnectionString": "DefaultEndpointsProtocol=https;AccountName=qal10nportalapasa;AccountKey=${AccountKey};EndpointSuffix=core.windows.net",
+  "StorageContainer": "assets",
+  "Geos": "Ame,Ema,Apa",
+  "AllowedHosts": "*",
+  "ApplicationInsights": {
+    "ConnectionString": "InstrumentationKey=ce454f55-07fb-4e83-89de-a5bf77676c82;IngestionEndpoint=https://japaneast-0.in.applicationinsights.azure.com/;LiveEndpoint=https://japaneast.livediagnostics.monitor.azure.com/;"
+  },
+  "UserAssignedIdentity": "0dff70a0-9c0b-4c62-a8d5-5f90d4ec367e"
+}

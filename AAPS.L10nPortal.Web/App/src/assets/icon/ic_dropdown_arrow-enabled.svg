@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/ic_dropdown_arrow-enabled</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/ic_dropdown_arrow-enabled" fill="#0096D7">
+            <g id="dropdown_arrow-enabled" transform="translate(2.000000, 4.000000)">
+                <path d="M10.109375,1.03125 C10.2656258,0.874999219 10.4583322,0.796875 10.6875,0.796875 C10.9166678,0.796875 11.1145825,0.874999219 11.28125,1.03125 C11.4375008,1.18750078 11.515625,1.38020719 11.515625,1.609375 C11.515625,1.83854281 11.4375008,2.03124922 11.28125,2.1875 L6.578125,6.796875 C6.42187422,6.95312578 6.22916781,7.03125 6,7.03125 C5.77083219,7.03125 5.5729175,6.95312578 5.40625,6.796875 L0.71875,2.1875 C0.562499219,2.03124922 0.484375,1.83854281 0.484375,1.609375 C0.484375,1.38020719 0.562499219,1.18750078 0.71875,1.03125 C0.8854175,0.874999219 1.08333219,0.796875 1.3125,0.796875 C1.54166781,0.796875 1.73437422,0.874999219 1.890625,1.03125 L6,4.796875 L10.109375,1.03125 Z" id=""></path>
+            </g>
+        </g>
+    </g>
+</svg>

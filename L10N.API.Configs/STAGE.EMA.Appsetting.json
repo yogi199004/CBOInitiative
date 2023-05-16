@@ -1,0 +1,52 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AzureAd": {
+    "Instance": "https://login.microsoftonline.com/",
+    "Domain": "deloitte.onmicrosoft.com",
+    "TenantId": "36da45f1-dd2c-4d1f-af13-5abe46b99921",
+    "ClientId": "bca4d738-9036-4126-aee2-007654036a61",
+    "CallbackPath": "/signin-oidc",
+    "SignedOutCallbackPath ": "https://login.microsoftonline.com/common/oauth2/logout"
+  },
+  "CosmosDb": {
+    "CosmosServerURI": "serveruri",
+    "PrimaryKeyReadOnly": "readonlykey",
+    "Databaseid": "L10nPortal",
+    "OmniaContainerId": "OmniaContainer",
+    "LevviaContainerId": "LevviaContainer",
+    "GeneralAppContainerId": "GeneralAppsContainer",
+    "Regions": "West Europe",
+    "OtherRegions": "East US 2,Japan East"
+  },
+  "DeloitteCore": {
+    "Logging": {
+      "LogLevel": {
+        "Default": "Information",
+        "Microsoft": "Information",
+        "Microsoft.Hosting.Lifetime": "Information"
+      },
+      "WriteTo": [
+        {
+          "Name": "AppInsights",
+          "ConnectionString": "InstrumentationKey=1f31e60a-4f01-4d1b-adae-7a8a81a07dfc;IngestionEndpoint=https://westeurope-3.in.applicationinsights.azure.com/;LiveEndpoint=https://westeurope.livediagnostics.monitor.azure.com/;",
+          "CloudRoleName": "L10nPortal_v2"
+        }
+      ],
+      "ApplicationName": "AAPS.L10NPortalV2.API"
+    }
+  },
+  "L10nKeyVaultUri": "https://stagel10nportalemakv.vault.azure.net",
+  "StorageAccountConnectionString": "DefaultEndpointsProtocol=https;AccountName=stagel10nportalemasa;AccountKey=${AccountKey};EndpointSuffix=core.windows.net",
+  "StorageContainer": "assets",
+  "Geos": "Ame,Ema,Apa",
+  "AllowedHosts": "*",
+  "ApplicationInsights": {
+    "ConnectionString": "InstrumentationKey=1f31e60a-4f01-4d1b-adae-7a8a81a07dfc;IngestionEndpoint=https://westeurope-3.in.applicationinsights.azure.com/;LiveEndpoint=https://westeurope.livediagnostics.monitor.azure.com/;"
+  },
+  "UserAssignedIdentity": "9f362fae-09f9-434f-85ac-5304bb8cfa26"
+}

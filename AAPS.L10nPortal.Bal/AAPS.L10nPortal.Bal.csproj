@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Configurations>Debug;Release;Local</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+
+    <PackageReference Include="System.IO.Packaging" Version="6.0.0" />
+
+    <PackageReference Include="Microsoft.Azure.Storage.Blob" Version="11.2.3" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AAPS.L10nPortal.Contracts\AAPS.L10nPortal.Contracts.csproj" />
+    <ProjectReference Include="..\AAPS.L10nPortal.Dal\AAPS.L10nPortal.Dal.csproj" />
+  </ItemGroup>
+
+</Project>

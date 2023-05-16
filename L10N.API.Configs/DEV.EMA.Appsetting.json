@@ -1,0 +1,51 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AzureAd": {
+    "Instance": "https://login.microsoftonline.com/",
+    "Domain": "deloitte.onmicrosoft.com",
+    "TenantId": "36da45f1-dd2c-4d1f-af13-5abe46b99921",
+    "ClientId": "21b40eea-856c-4a7b-a73c-ea893454bd14",
+    "CallbackPath": "/signin-oidc",
+    "SignedOutCallbackPath ": "https://login.microsoftonline.com/common/oauth2/logout"
+  },
+  "CosmosDb": {
+    "CosmosServerURI": "serveruri",
+    "PrimaryKeyReadOnly": "readonlykey",
+    "Databaseid": "L10nPortal",
+    "OmniaContainerId": "OmniaContainer",
+    "LevviaContainerId": "LevviaContainer",
+    "GeneralAppContainerId": "GeneralAppsContainer",
+    "Regions": "West Europe",
+    "OtherRegions": "East US 2,Japan East"
+  },
+  "DeloitteCore": {
+    "Logging": {
+      "LogLevel": {
+        "Default": "Information",
+        "Microsoft": "Information",
+        "Microsoft.Hosting.Lifetime": "Information"
+      },
+      "WriteTo": [
+        {
+          "Name": "AppInsights",
+          "ConnectionString": "InstrumentationKey=075457cd-478d-457b-9643-bb1409386c72;IngestionEndpoint=https://westeurope-1.in.applicationinsights.azure.com/;LiveEndpoint=https://westeurope.livediagnostics.monitor.azure.com/;",
+          "CloudRoleName": "L10nPortal"
+        }
+      ],
+      "ApplicationName": "AAPS.L10NPortal.API"
+    }
+  },
+  "L10nKeyVaultUri": "https://devl10nportalemakv.vault.azure.net",
+  "StorageAccountConnectionString": "DefaultEndpointsProtocol=https;AccountName=devl10nportalemasa;AccountKey=${AccountKey};EndpointSuffix=core.windows.net",
+  "StorageContainer": "assets",
+  "AllowedHosts": "*",
+  "ApplicationInsights": {
+    "ConnectionString": "InstrumentationKey=075457cd-478d-457b-9643-bb1409386c72;IngestionEndpoint=https://westeurope-1.in.applicationinsights.azure.com/;LiveEndpoint=https://westeurope.livediagnostics.monitor.azure.com/;"
+  },
+  "UserAssignedIdentity": "415f0b35-7df5-4ae0-902c-83ba807c2ba7"
+}

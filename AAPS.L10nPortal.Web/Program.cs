@@ -82,11 +82,9 @@ builder.Services.AddAntiforgery(options => options.Cookie.Name = ".AspNetCore.An
 // Add services to the container.
 
 builder.Services.AddSingleton<IOpmDataProvider, OpmDataProvider>();
-#if LOCAL 
+
 builder.Services.AddSingleton<IConnectionStringProvider, AppConfigConnectionStringProvider>();
-#else
-builder.Services.AddSingleton<IConnectionStringProvider, KeyVaultConnectionStringProvider>();
-#endif
+
 builder.Services.AddSingleton<IUserRepository, UserRepository>();
 builder.Services.AddSingleton<IPrincipalDataService, PrincipalDataService>();
 builder.Services.AddSingleton<IUserManager, UserManager>();

@@ -1,3 +1,5 @@
+using Azure.Identity;
+using Azure.Security.KeyVault.Secrets;
 using L10N.API.BAL;
 using L10N.API.Common;
 using L10N.API.Contracts;

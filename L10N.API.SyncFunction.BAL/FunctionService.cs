@@ -66,21 +66,11 @@ namespace L10N.API.SyncFunction.BAL
         {
 
             string keyVaultURI;
-#if LOCAL
+
             endPointURI = System.Environment.GetEnvironmentVariable("Server");
             primaryKey = System.Environment.GetEnvironmentVariable("PrimaryKey");
             databaseId = System.Environment.GetEnvironmentVariable("Databaseid");
 
-#else
-            keyVaultURI = System.Environment.GetEnvironmentVariable("keyVaultUri");
-            if (endPointURI is null || primaryKey is null)
-            {
-                endPointURI = Task.Run(() => AzureKeyVaultDataProvider.GetSecretAsync(keyVaultURI, "CosmosServerURI")).Result;
-                primaryKey = Task.Run(() => AzureKeyVaultDataProvider.GetSecretAsync(keyVaultURI, "PrimaryKey")).Result;
-            }
-            databaseId = System.Environment.GetEnvironmentVariable("Databaseid");
-
-#endif
 
             if (endPointURI is null || primaryKey is null)
             {
@@ -229,14 +219,14 @@ namespace L10N.API.SyncFunction.BAL
             string secretValue;
             string keyVaultURI;
 
-#if LOCAL
+
             connectionString = System.Environment.GetEnvironmentVariable("L10nPortal");
-#else
-            keyVaultURI = ConfigValues.KeyVaultURI;
-            secretValue = Task.Run(() => AzureKeyVaultDataProvider.GetSecretAsync(keyVaultURI, "L10nServerPassword")).Result;
-            var connectionStringTemplate = System.Environment.GetEnvironmentVariable("L10nPortal");
-            connectionString = connectionStringTemplate.Replace(PasswordPattern, secretValue);
-#endif
+
+            //keyVaultURI = ConfigValues.KeyVaultURI;
+            //secretValue = Task.Run(() => AzureKeyVaultDataProvider.GetSecretAsync(keyVaultURI, "L10nServerPassword")).Result;
+            //var connectionStringTemplate = System.Environment.GetEnvironmentVariable("L10nPortal");
+            //connectionString = connectionStringTemplate.Replace(PasswordPattern, secretValue);
+
             return connectionString;
         }
 

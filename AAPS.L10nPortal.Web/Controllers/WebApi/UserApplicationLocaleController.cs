@@ -1,6 +1,7 @@
 ﻿using AAPS.L10nPortal.Contracts.Managers;
 using AAPS.L10nPortal.Contracts.Services;
 using AAPS.L10nPortal.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -22,14 +23,14 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
             Logger = _log;
         }
         [HttpGet]
-
+        [AllowAnonymous]
         public async Task<IEnumerable<UserApplicationLocale>> Get()
         {
-            var permissionData = CreatePermissionData();
+            //var permissionData = CreatePermissionData();
 
             try
             {
-                return await this.ApplicationLocaleManager.GetUserApplicationLocaleListAsync(permissionData);
+                return await this.ApplicationLocaleManager.GetUserApplicationLocaleListAsync();
             }
             catch (Exception ex)
             {

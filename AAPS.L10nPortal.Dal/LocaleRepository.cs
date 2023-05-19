@@ -10,6 +10,7 @@ namespace AAPS.L10nPortal.Dal
         public LocaleRepository(IConnectionStringProvider connectionStringProvider) : base(connectionStringProvider)
         {
 
+
         }
 
         public IEnumerable<Locale> GetLocalesList()

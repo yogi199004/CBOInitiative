@@ -28,7 +28,7 @@ namespace AAPS.L10nPortal.Dal
         {
             return new List<ApplicationLocaleModel>();
         }
-        public IEnumerable<UserApplicationLocale> GetUserApplicationLocaleList(PermissionData permissionData)
+        public IEnumerable<UserApplicationLocale> GetUserApplicationLocaleList()
         {
             return new List<UserApplicationLocale>();
         }

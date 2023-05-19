@@ -2,6 +2,7 @@
 using AAPS.L10nPortal.Contracts.Managers;
 using AAPS.L10nPortal.Contracts.Repositories;
 using AAPS.L10nPortal.Entities;
+using Newtonsoft.Json.Linq;
 
 namespace AAPS.L10nPortal.Bal
 {
@@ -97,38 +98,62 @@ namespace AAPS.L10nPortal.Bal
             return await ResolveUsers(applicationLocale);
         }
 
-        public async Task<IEnumerable<UserApplicationLocale>> GetUserApplicationLocaleListAsync(PermissionData permissionData)
+        public async Task<IEnumerable<UserApplicationLocale>> GetUserApplicationLocaleListAsync()
         {
+            bool retriveFromJson = true;
 
 
-            var locales = this.appLocaleRepository.GetUserApplicationLocaleList(permissionData);
 
-            var uids = locales.GroupBy(l => l.UserId).Select(group => group.Key);
 
-            var localeUsers = await UserManager.Resolve(uids);
-
-            foreach (var applicationLocale in locales)
+            if (retriveFromJson)
             {
-                GlobalEmployeeUser user;
+                var locales = Enumerable.Empty<UserApplicationLocale>();
+                var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Constants.AppConfig.Defaults.EmployeesJsonFilePath);
 
-                localeUsers.TryGetValue(applicationLocale.UserId, out user);
 
-                if (user == null)
+
+                JObject objData = JObject.Parse(File.ReadAllText(filePath));
+                locales = objData.ToObject<LocaleJsonResponse>().Locales;
+
+
+
+                return locales;
+
+
+
+            }
+
+            else
+            {
+                var locales = this.appLocaleRepository.GetUserApplicationLocaleList();
+
+                var uids = locales.GroupBy(l => l.UserId).Select(group => group.Key);
+
+                var localeUsers = await UserManager.Resolve(uids);
+
+                foreach (var applicationLocale in locales)
                 {
-                    applicationLocale.PreferredName = applicationLocale.UserId.ToString();
+                    GlobalEmployeeUser user;
 
-                    continue;
+                    localeUsers.TryGetValue(applicationLocale.UserId, out user);
+
+                    if (user == null)
+                    {
+                        applicationLocale.PreferredName = applicationLocale.UserId.ToString();
+
+                        continue;
+                    }
+
+
+                    applicationLocale.PreferredName = user.PreferredFullName;
+                    applicationLocale.UserEmail = user.Email;
                 }
 
 
-                applicationLocale.PreferredName = user.PreferredFullName;
-                applicationLocale.UserEmail = user.Email;
+
+
+                return locales;
             }
-
-
-
-
-            return locales;
 
             //return await this.appLocaleRepository.GetUserApplicationLocaleListAsync(permissionData);
         }

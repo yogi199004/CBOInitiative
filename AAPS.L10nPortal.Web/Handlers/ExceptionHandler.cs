@@ -24,7 +24,7 @@ namespace AAPS.L10nPortal.Web.Handlers
             {
 
                 httpContext.Response.Headers.Add("Access-Control-Allow-Origin", "*.deloitte.com");
-                httpContext.Response.Headers.Add("Content-Security-Policy", "default-src 'self' 'unsafe-inline' https://*.deloitte.com cdn.cookielaw.org geolocation.onetrust.com; style-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.deloitte.com; font-src 'self' data:; img-src data: 'self' *.deloitte.com cdn.cookielaw.org; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.deloitte.com https://js-agent.newrelic.com/ https://bam.nr-data.net/ https://eastus-1.in.applicationinsights.azure.com cdn.cookielaw.org geolocation.onetrust.com; connect-src 'self' https://*.deloitte.com https://eastus-1.in.applicationinsights.azure.com cdn.cookielaw.org geolocation.onetrust.com");
+                httpContext.Response.Headers.Add("Content-Security-Policy", "default-src 'self' 'unsafe-inline' https://localhost:51974/ ; style-src 'self' 'unsafe-inline' 'unsafe-eval' https://localhost:51974/ ; font-src 'self' data:; img-src data: 'self' https://localhost:51974/ cdn.cookielaw.org; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://localhost:51974/ https://js-agent.newrelic.com/ https://bam.nr-data.net/ cdn.cookielaw.org geolocation.onetrust.com; connect-src 'self' wss://localhost:44334/AAPS.L10nPortal.Web/");
                 //httpContext.Response.Headers.Add("X-Content-Type-Options", "nosniff");
                 // httpContext.Response.Headers.Add("Strict-Transport-Security", "max-age=31536000");
                 httpContext.Response.Headers.Add("Referrer-Policy", "no-referrer");

@@ -132,9 +132,6 @@ namespace AAPS.L10nPortal.Bal
                     applicationLocale.UserEmail = user.Email;
                 }
 
-
-
-
                 return locales;
             }
 

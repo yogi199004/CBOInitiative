@@ -12,40 +12,37 @@
 <table class="table table-striped textAlignCenter dashboard-table  mt-2">
   <tr>
     <th>
-      <a href="#" class="link-txt" role="button" id="dropdownMenuLink" data-toggle="dropdown">Application <i
-          class="bi bi-caret-down-fill"></i></a>
+      <a href="#" class="link-txt" role="button" id="dropdownMenuLink" data-toggle="dropdown">Application </a>
 
-      <app-sort-filter (sortFilterFromChild)="sortFilterFromChild($event)" *ngIf="locales"
+      <!--<app-sort-filter (sortFilterFromChild)="sortFilterFromChild($event)" *ngIf="locales"
         [dropDownFilterData]="filterdropDownData?.ApplicationName" [currentSortedColumn]="currentSortColumn">
-      </app-sort-filter>
+      </app-sort-filter>-->
     </th>
 
     <th>
-      <a href="#" class="link-txt" role="button" id="dropdownMenuLink" data-toggle="dropdown">Assigned to <i
-          class="bi bi-caret-down-fill"></i></a>
+      <a href="#" class="link-txt" role="button" id="dropdownMenuLink" data-toggle="dropdown">Assigned to </a>
 
-      <app-sort-filter (sortFilterFromChild)="sortFilterFromChild($event)" *ngIf="locales"
+      <!--<app-sort-filter (sortFilterFromChild)="sortFilterFromChild($event)" *ngIf="locales"
         [dropDownFilterData]="filterdropDownData?.PreferredName" [currentSortedColumn]="currentSortColumn">
-      </app-sort-filter>
+      </app-sort-filter>-->
     </th>
 
     <th>
       <a href="#" class="link-txt" role="button" id="dropdownMenuLink" data-toggle="dropdown">Locale (Language-Country)
-        <i class="bi bi-caret-down-fill"></i>
+        
       </a>
 
-      <app-sort-filter (sortFilterFromChild)="sortFilterFromChild($event)" *ngIf="locales"
+      <!--<app-sort-filter (sortFilterFromChild)="sortFilterFromChild($event)" *ngIf="locales"
         [dropDownFilterData]="filterdropDownData?.LocaleCode" [currentSortedColumn]="currentSortColumn">
-      </app-sort-filter>
+      </app-sort-filter>-->
     </th>
     <th>
-      <a href="#" class="link-txt" role="button" id="dropdownMenuLink" data-toggle="dropdown">Last Modified Date <i
-          class="bi bi-caret-down-fill"></i>
+      <a href="#" class="link-txt" role="button" id="dropdownMenuLink" data-toggle="dropdown">Last Modified Date 
       </a>
 
-      <app-sort-filter (sortFilterFromChild)="sortFilterFromChild($event)" *ngIf="locales"
+      <!--<app-sort-filter (sortFilterFromChild)="sortFilterFromChild($event)" *ngIf="locales"
         [dropDownFilterData]="filterdropDownData?.UpdatedDate" [currentSortedColumn]="currentSortColumn">
-      </app-sort-filter>
+      </app-sort-filter>-->
     </th>
     <th>
       <span>Upload / Download</span>
@@ -53,8 +50,8 @@
     <th></th>
     <th></th>
     <th>
-      <button class="btn btn-outline-primary btn-clearfilter" *ngIf="filterApplied" (click)="clearFilter()">Clear all
-        filters <i class="bi bi-x"></i></button>
+      <!--<button class="btn btn-outline-primary btn-clearfilter" *ngIf="filterApplied" (click)="clearFilter()">Clear all
+        filters <i class="bi bi-x"></i></button>-->
     </th>
   </tr>
   <tr *ngFor="let locale of locales; let i = index">

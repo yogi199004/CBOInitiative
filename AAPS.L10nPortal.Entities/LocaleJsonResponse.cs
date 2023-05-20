@@ -8,6 +8,6 @@ namespace AAPS.L10nPortal.Entities
 {
     public class LocaleJsonResponse
     {
-        public UserApplicationLocale[] Locales { get; set };
+        public UserApplicationLocale[] Locales { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using AAPS.L10nPortal.Contracts.Managers;
 using AAPS.L10nPortal.Contracts.Repositories;
 using AAPS.L10nPortal.Entities;
+using AAPS.L10NPortal.Common;
 using Newtonsoft.Json.Linq;
 
 namespace AAPS.L10nPortal.Bal
@@ -108,7 +109,7 @@ namespace AAPS.L10nPortal.Bal
             if (retriveFromJson)
             {
                 var locales = Enumerable.Empty<UserApplicationLocale>();
-                var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Constants.AppConfig.Defaults.EmployeesJsonFilePath);
+                var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, L10nConstants.LocalesFilePath);
 
 
 

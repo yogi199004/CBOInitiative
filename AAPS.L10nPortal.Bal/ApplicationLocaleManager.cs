@@ -3,6 +3,7 @@ using AAPS.L10nPortal.Contracts.Managers;
 using AAPS.L10nPortal.Contracts.Repositories;
 using AAPS.L10nPortal.Entities;
 using AAPS.L10NPortal.Common;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 
 namespace AAPS.L10nPortal.Bal
@@ -11,12 +12,15 @@ namespace AAPS.L10nPortal.Bal
     {
         private readonly IApplicationLocaleRepository appLocaleRepository;
 
+        private IConfiguration config;
+
         private IUserManager UserManager { get; }
 
-        public ApplicationLocaleManager(IUserManager userManager, IApplicationLocaleRepository applicationLocaleRepository)
+        public ApplicationLocaleManager(IUserManager userManager, IApplicationLocaleRepository applicationLocaleRepository, IConfiguration config)
         {
             this.UserManager = userManager;
             this.appLocaleRepository = applicationLocaleRepository;
+            this.config = config;   
         }
 
         private async Task<UserApplicationLocale> ResolveUsers(UserApplicationLocale applicationLocale)
@@ -101,51 +105,29 @@ namespace AAPS.L10nPortal.Bal
 
         public async Task<IEnumerable<UserApplicationLocale>> GetUserApplicationLocaleListAsync()
         {
-            bool retriveFromJson = true;
-
-
-
-
+            
+            bool retriveFromJson = Convert.ToBoolean(config.GetRequiredSection("GetLocalesDataFromJson").Value);
             if (retriveFromJson)
             {
                 var locales = Enumerable.Empty<UserApplicationLocale>();
                 var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, L10nConstants.LocalesFilePath);
-
-
-
                 JObject objData = JObject.Parse(File.ReadAllText(filePath));
                 locales = objData.ToObject<LocaleJsonResponse>().Locales;
-
-
-
                 return locales;
-
-
-
             }
 
             else
             {
                 var locales = this.appLocaleRepository.GetUserApplicationLocaleList();
-
                 var uids = locales.GroupBy(l => l.UserId).Select(group => group.Key);
-
                 var localeUsers = await UserManager.Resolve(uids);
-
                 foreach (var applicationLocale in locales)
-                {
-                    GlobalEmployeeUser user;
-
+                {  GlobalEmployeeUser user;
                     localeUsers.TryGetValue(applicationLocale.UserId, out user);
-
                     if (user == null)
-                    {
-                        applicationLocale.PreferredName = applicationLocale.UserId.ToString();
-
+                    {applicationLocale.PreferredName = applicationLocale.UserId.ToString();
                         continue;
                     }
-
-
                     applicationLocale.PreferredName = user.PreferredFullName;
                     applicationLocale.UserEmail = user.Email;
                 }

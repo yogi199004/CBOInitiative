@@ -51,6 +51,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L10n.Web.API.Tests", "L10n.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AAPS.L10nPortal.FunctionAPI", "AAPS.L10nPortal.FunctionAPI\AAPS.L10nPortal.FunctionAPI.csproj", "{50173A83-1B95-4F0A-A4B6-73B9A57FAD75}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AAPS.L10nPortal.Batch", "AAPS.L10nPortal.Batch\AAPS.L10nPortal.Batch.csproj", "{6CD52D90-7ACD-4FB9-9B5E-598FA92FC8AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -202,6 +204,12 @@ Global
 		{50173A83-1B95-4F0A-A4B6-73B9A57FAD75}.Local|Any CPU.Build.0 = Local|Any CPU
 		{50173A83-1B95-4F0A-A4B6-73B9A57FAD75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50173A83-1B95-4F0A-A4B6-73B9A57FAD75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CD52D90-7ACD-4FB9-9B5E-598FA92FC8AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CD52D90-7ACD-4FB9-9B5E-598FA92FC8AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CD52D90-7ACD-4FB9-9B5E-598FA92FC8AC}.Local|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CD52D90-7ACD-4FB9-9B5E-598FA92FC8AC}.Local|Any CPU.Build.0 = Debug|Any CPU
+		{6CD52D90-7ACD-4FB9-9B5E-598FA92FC8AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CD52D90-7ACD-4FB9-9B5E-598FA92FC8AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

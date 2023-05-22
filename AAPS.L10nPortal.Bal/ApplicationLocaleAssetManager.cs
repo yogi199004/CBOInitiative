@@ -23,19 +23,19 @@ namespace AAPS.L10nPortal.Bal
         {
             return Regex.Replace(input, "[0-9]+", match => match.Value.PadLeft(10, '0'));
         }
-        public async Task<ApplicationAssets> GetListAsync(PermissionData permissionData, int applicationLocaleId)
+        public async Task<ApplicationAssets> GetListAsync( int applicationLocaleId)
         {
             try
             {
                 var applicationLocale =
-                    (applicationLocaleRepository.GetUserApplicationLocaleById(permissionData, applicationLocaleId))
+                    (await applicationLocaleRepository.GetUserApplicationLocaleById( applicationLocaleId))
                     .FirstOrDefault();
 
                 return new ApplicationAssets
                 {
                     ApplicationName = applicationLocale.ApplicationName,
                     LocaleCode = applicationLocale.LocaleCode,
-                    Assets = null// (await applicationLocaleAssetRepository.GetList(permissionData, applicationLocaleId)).OrderBy(x => PadNumbers(x.Key))
+                    Assets = null//(await applicationLocaleAssetRepository.GetList(applicationLocaleId)).Select(x => x.MapTo<Asset>()).OrderBy(x => PadNumbers(x.Key))
                 };
             }
             catch (PermissionException)
@@ -49,7 +49,7 @@ namespace AAPS.L10nPortal.Bal
             try
             {
                 var applicationLocale =
-                    (applicationLocaleRepository.GetUserApplicationLocaleById(permissionData, applicationLocaleId))
+                    (await applicationLocaleRepository.GetUserApplicationLocaleById(applicationLocaleId))
                     .FirstOrDefault();
 
                 return new ApplicationAssets
@@ -70,7 +70,7 @@ namespace AAPS.L10nPortal.Bal
             try
             {
                 var applicationLocale =
-                    (applicationLocaleRepository.GetUserApplicationLocaleById(permissionData, applicationLocaleId))
+                    (await applicationLocaleRepository.GetUserApplicationLocaleById( applicationLocaleId))
                     .FirstOrDefault();
 
                 var asset = "test";
@@ -103,7 +103,7 @@ namespace AAPS.L10nPortal.Bal
             try
             {
                 var applicationLocale =
-                    (applicationLocaleRepository.GetUserApplicationLocaleById(permissionData, applicationLocaleId))
+                    (await applicationLocaleRepository.GetUserApplicationLocaleById(applicationLocaleId))
                     .FirstOrDefault();
 
                 var asset = "test";

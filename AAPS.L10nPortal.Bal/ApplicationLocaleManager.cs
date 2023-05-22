@@ -142,7 +142,7 @@ namespace AAPS.L10nPortal.Bal
         public async Task<UserApplicationLocale> GetApplicationLocaleByIdAsync(PermissionData permissionData, int applicationLocaleId)
         {
             var applicationLocale =
-                (this.appLocaleRepository.GetUserApplicationLocaleById(permissionData, applicationLocaleId))
+                (await this.appLocaleRepository.GetUserApplicationLocaleById( applicationLocaleId))
                 .FirstOrDefault();
 
             if (applicationLocale != null && applicationLocale.UpdatedBy.HasValue)

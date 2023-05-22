@@ -80,7 +80,7 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
             var permissionData = CreatePermissionData();
             try
             {
-                var Assets = await this.ApplicationLocaleAssetManager.GetListAsync(permissionData, data.ApplicationLocaleId);
+                var Assets = await this.ApplicationLocaleAssetManager.GetListAsync( data.ApplicationLocaleId);
                 ApplicationAssets filteredAssets = new ApplicationAssets();
 
                 filteredAssets.ApplicationName = Assets.ApplicationName;

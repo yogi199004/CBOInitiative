@@ -1,6 +1,9 @@
 ﻿using AAPS.L10nPortal.Contracts.Repositories;
 using AAPS.L10nPortal.Contracts.Services;
 using AAPS.L10nPortal.Entities;
+using DbDataReaderMapper;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace AAPS.L10nPortal.Dal
 {
@@ -57,9 +60,28 @@ namespace AAPS.L10nPortal.Dal
             return 0;
         }
 
-        public IEnumerable<ApplicationLocaleAsset> GetList(PermissionData permissionData, int applicationLocaleId)
+        public async Task<IEnumerable<ApplicationLocaleAsset>> GetList(int applicationLocaleId)
         {
-            return new List<ApplicationLocaleAsset>();
+            List<ApplicationLocaleAsset> ApplicationLocaleAssetList = new List<ApplicationLocaleAsset>();
+            using (var connection = await CreateSqlConnection())
+            {
+
+                using (var command = new SqlCommand("spApplicationLocaleAssetGetList", connection) { CommandType = CommandType.StoredProcedure })
+                {
+                    command.Parameters.AddWithValue("@userId", "00000000-0000-0000-0000-00007731eedc");
+                    command.Parameters.AddWithValue("@applicationLocaleId", applicationLocaleId);
+                    connection.Open();
+                    var reader = await command.ExecuteReaderAsync();
+                    while (reader.Read())
+                    {
+                        var applicationLocaleModelObj = reader.MapToObject<ApplicationLocaleAsset>();
+                        ApplicationLocaleAssetList.Add(applicationLocaleModelObj);
+
+                    }
+                }
+            }
+
+            return ApplicationLocaleAssetList;
         }
 
         public IEnumerable<ApplicationLocaleAsset> GetAssetKeyWithAsset(PermissionData permissionData, int applicationLocaleId)

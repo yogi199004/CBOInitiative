@@ -1,6 +1,7 @@
 ﻿using AAPS.L10nPortal.Contracts.Repositories;
 using AAPS.L10nPortal.Contracts.Services;
 using AAPS.L10nPortal.Entities;
+using DbDataReaderMapper;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -27,8 +28,9 @@ namespace AAPS.L10nPortal.Dal
         {
             return new List<ApplicationLocaleModel>();
         }
-        public async void GetUserApplicationLocaleList()
+        public async Task<IEnumerable<UserApplicationLocale>> GetUserApplicationLocaleList()
         {
+            List<UserApplicationLocale> userApplicationLocaleList = new List<UserApplicationLocale>();
             using (var connection = await CreateSqlConnection())
             {
 
@@ -39,14 +41,14 @@ namespace AAPS.L10nPortal.Dal
                     var reader = await command.ExecuteReaderAsync();
                     while (reader.Read())
                     {
+                        var applicationLocaleModelObj = reader.MapToObject<UserApplicationLocale>();
+                        userApplicationLocaleList.Add(applicationLocaleModelObj);
                         
-
-
                     }
                 }
             }
 
-            
+            return userApplicationLocaleList;
         }
         public IEnumerable<ApplicationLocaleValue> GetApplicationLocaleValueList(PermissionData permissionData, int applicationLocaleId)
         {

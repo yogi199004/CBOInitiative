@@ -19,11 +19,11 @@ namespace AAPS.L10nPortal.Dal
             ConnectionStringProvider = connectionStringProvider;
         }
 
-        private async Task<SqlConnection> CreateSqlConnection()
+        public async Task<SqlConnection> CreateSqlConnection()
         {
-            var connectionString = "Data Source=localhost;Initial Catalog=L10nPortal;Integrated Security=True";
-            /*await ConnectionStringProvider.GetConnectionString(connectionStringName, passwordSecretName)*/
-            ;
+            //var connectionString = "Data Source=localhost;Initial Catalog=L10nPortal;Integrated Security=True";
+            var connectionString = await ConnectionStringProvider.GetConnectionString(connectionStringName, passwordSecretName);
+            
 
             return new SqlConnection(connectionString);
         }

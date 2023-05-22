@@ -118,7 +118,8 @@ namespace AAPS.L10nPortal.Bal
 
             else
             {
-                var locales = this.appLocaleRepository.GetUserApplicationLocaleList();
+                 this.appLocaleRepository.GetUserApplicationLocaleList();
+                var locales = new List<UserApplicationLocale>();
                 var uids = locales.GroupBy(l => l.UserId).Select(group => group.Key);
                 var localeUsers = await UserManager.Resolve(uids);
                 foreach (var applicationLocale in locales)

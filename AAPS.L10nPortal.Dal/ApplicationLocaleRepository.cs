@@ -1,9 +1,8 @@
 ﻿using AAPS.L10nPortal.Contracts.Repositories;
 using AAPS.L10nPortal.Contracts.Services;
 using AAPS.L10nPortal.Entities;
-
-
-
+using System.Data;
+using System.Data.SqlClient;
 
 namespace AAPS.L10nPortal.Dal
 {
@@ -28,9 +27,26 @@ namespace AAPS.L10nPortal.Dal
         {
             return new List<ApplicationLocaleModel>();
         }
-        public IEnumerable<UserApplicationLocale> GetUserApplicationLocaleList()
+        public async void GetUserApplicationLocaleList()
         {
-            return new List<UserApplicationLocale>();
+            using (var connection = await CreateSqlConnection())
+            {
+
+                using (var command = new SqlCommand("spUserApplicationLocaleGetList", connection) { CommandType = CommandType.StoredProcedure })
+                {
+                    command.Parameters.AddWithValue("@userId", "00000000-0000-0000-0000-00007731eedc");
+                    connection.Open();
+                    var reader = await command.ExecuteReaderAsync();
+                    while (reader.Read())
+                    {
+                        
+
+
+                    }
+                }
+            }
+
+            
         }
         public IEnumerable<ApplicationLocaleValue> GetApplicationLocaleValueList(PermissionData permissionData, int applicationLocaleId)
         {

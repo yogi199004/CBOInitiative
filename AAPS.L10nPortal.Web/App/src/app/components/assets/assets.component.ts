@@ -38,13 +38,15 @@ export class AssetsComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.applicationLocaleId = params['applicationLocaleId'];
       if (this.router.url.includes('/asset-links')) {
-        this.applyAssetLinkFilter();
-        this.assetLinkFilter = true;
-      }
-      else {
         this.init();
       }
-      this.initFilterstates(false)
+      //  this.applyAssetLinkFilter();
+      //  this.assetLinkFilter = true;
+      //}
+      //else {
+      //  this.init();
+      //}
+      //this.initFilterstates(false)
     });
   }
   initFilterstates(bool) {

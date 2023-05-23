@@ -1,9 +1,9 @@
 ﻿using AAPS.L10nPortal.Contracts.Repositories;
 using AAPS.L10nPortal.Contracts.Services;
 using AAPS.L10nPortal.Entities;
-
-
-
+using DbDataReaderMapper;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace AAPS.L10nPortal.Dal
 {
@@ -28,17 +28,54 @@ namespace AAPS.L10nPortal.Dal
         {
             return new List<ApplicationLocaleModel>();
         }
-        public IEnumerable<UserApplicationLocale> GetUserApplicationLocaleList(PermissionData permissionData)
+        public async Task<IEnumerable<UserApplicationLocale>> GetUserApplicationLocaleList()
         {
-            return new List<UserApplicationLocale>();
+            List<UserApplicationLocale> userApplicationLocaleList = new List<UserApplicationLocale>();
+            using (var connection = await CreateSqlConnection())
+            {
+
+                using (var command = new SqlCommand("spUserApplicationLocaleGetList", connection) { CommandType = CommandType.StoredProcedure })
+                {
+                    command.Parameters.AddWithValue("@userId", "00000000-0000-0000-0000-00007731eedc");
+                    connection.Open();
+                    var reader = await command.ExecuteReaderAsync();
+                    while (reader.Read())
+                    {
+                        var applicationLocaleModelObj = reader.MapToObject<UserApplicationLocale>();
+                        userApplicationLocaleList.Add(applicationLocaleModelObj);
+                        
+                    }
+                }
+            }
+
+            return userApplicationLocaleList;
         }
         public IEnumerable<ApplicationLocaleValue> GetApplicationLocaleValueList(PermissionData permissionData, int applicationLocaleId)
         {
             return new List<ApplicationLocaleValue>();
         }
-        public IEnumerable<UserApplicationLocale> GetUserApplicationLocaleById(PermissionData permissionData, int applicationLocaleId)
+        public async Task<IEnumerable<UserApplicationLocale>> GetUserApplicationLocaleById( int applicationLocaleId)
         {
-            return new List<UserApplicationLocale>();
+            List<UserApplicationLocale> userApplicationLocaleList = new List<UserApplicationLocale>();
+            using (var connection = await CreateSqlConnection())
+            {
+
+                using (var command = new SqlCommand("spUserApplicationLocaleGetById", connection) { CommandType = CommandType.StoredProcedure })
+                {
+                    command.Parameters.AddWithValue("@userId", "00000000-0000-0000-0000-00007731eedc");
+                    command.Parameters.AddWithValue("@ApplicationLocaleId", applicationLocaleId);
+                    connection.Open();
+                    var reader = await command.ExecuteReaderAsync();
+                    while (reader.Read())
+                    {
+                        var applicationLocaleModelObj = reader.MapToObject<UserApplicationLocale>();
+                        userApplicationLocaleList.Add(applicationLocaleModelObj);
+
+                    }
+                }
+            }
+
+            return userApplicationLocaleList;
         }
 
 

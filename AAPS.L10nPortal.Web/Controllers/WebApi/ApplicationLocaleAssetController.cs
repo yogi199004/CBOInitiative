@@ -3,11 +3,13 @@ using AAPS.L10nPortal.Bal.Extensions;
 using AAPS.L10nPortal.Contracts.Managers;
 using AAPS.L10nPortal.Contracts.Models;
 using AAPS.L10nPortal.Contracts.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.StaticFiles;
 
+
 namespace AAPS.L10nPortal.Web.Controllers.WebApi
-{
+{  
     [Route("api/ApplicationLocaleAsset")]
     public class ApplicationLocaleAssetController : BaseApiController
     {
@@ -19,15 +21,16 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
             this.ApplicationLocaleAssetManager = applicationLocaleAssetManager;
             Logger = _log;
         }
-
+        
         [HttpGet]
         [Route("{applicationLocaleId:int}")]
+        [AllowAnonymous]
         public async Task<ApplicationAssets> Get(int applicationLocaleId)
         {
-            var permissionData = CreatePermissionData();
+            
             try
             {
-                return await this.ApplicationLocaleAssetManager.GetListAsync(permissionData, applicationLocaleId);
+                return await this.ApplicationLocaleAssetManager.GetListAsync(applicationLocaleId);
             }
             catch (Exception ex)
             {

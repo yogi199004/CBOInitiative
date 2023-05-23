@@ -47,8 +47,10 @@ namespace AAPS.L10nPortal.Bal
         public async Task<GlobalEmployeeUser> Resolve(PrincipalData principalData)
         {
 
-            return await Resolve(principalData.UserEmail);
-            //return await Resolve("yodubey@deloitte.com");
+            
+            
+            //return await Resolve(principalData.UserEmail);
+            return await Resolve("yodubey@deloitte.com");
 
         }
 

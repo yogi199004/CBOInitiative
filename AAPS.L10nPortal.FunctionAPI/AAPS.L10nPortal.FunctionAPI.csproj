@@ -7,6 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.6.0" />
     <PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.3.0" />
+    <PackageReference Include="DbDataReaderMapper" Version="1.1.1" />
     <PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
@@ -14,8 +15,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AAPS.L10NPortal.Common\AAPS.L10NPortal.Common.csproj" />
-    <ProjectReference Include="..\L10N.API.BAL\L10N.API.BAL.csproj" />
-    <ProjectReference Include="..\L10N.API.Contracts\L10N.API.Contracts.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">

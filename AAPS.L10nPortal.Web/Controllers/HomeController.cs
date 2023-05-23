@@ -9,7 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AAPS.L10nPortal.Web.Controllers
 {
-    [Authorize]
+    //[Authorize]
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         IAntiforgery _antiforgery;
@@ -21,9 +22,9 @@ namespace AAPS.L10nPortal.Web.Controllers
         public IActionResult Index()
         {
             //to implement anto forgery logic here
-            ViewBag.__RequestVerificationToken = TokenHeaderValue();
-            ViewBag.ApplicationInsights = _config.GetValue<string>("DeloitteCore:Logging:WriteTo:0:ConnectionString");
-            ViewBag.cookieDomain = _config.GetRequiredSection("CookieDomain").Value;
+            //ViewBag.__RequestVerificationToken = TokenHeaderValue();
+            //ViewBag.ApplicationInsights = _config.GetValue<string>("DeloitteCore:Logging:WriteTo:0:ConnectionString");
+            //ViewBag.cookieDomain = _config.GetRequiredSection("CookieDomain").Value;
             return View();
         }
 

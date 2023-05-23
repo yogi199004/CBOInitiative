@@ -2,6 +2,7 @@
 using AAPS.L10nPortal.Contracts.Managers;
 using AAPS.L10nPortal.Contracts.Services;
 using AAPS.L10nPortal.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AAPS.L10nPortal.Web.Controllers.WebApi
@@ -26,7 +27,7 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
         {
             return View();
         }
-
+        [AllowAnonymous]
         [Route("Current")]
         public async Task<PortalUser> GetCurrent()
         {

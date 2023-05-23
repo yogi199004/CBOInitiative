@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AAPS.L10nPortal.Dal", "AAPS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AAPS.L10nPortal.Secrets", "AAPS.L10nPortal.Secrets\AAPS.L10nPortal.Secrets.csproj", "{A4FC25C0-7584-4DFB-AB41-EC2AEC5A119C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AAPS.L10nPortal.Batch", "AAPS.L10nPortal.Batch\AAPS.L10nPortal.Batch.csproj", "{6CD52D90-7ACD-4FB9-9B5E-598FA92FC8AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -90,6 +92,12 @@ Global
 		{A4FC25C0-7584-4DFB-AB41-EC2AEC5A119C}.Local|Any CPU.Build.0 = Debug|Any CPU
 		{A4FC25C0-7584-4DFB-AB41-EC2AEC5A119C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4FC25C0-7584-4DFB-AB41-EC2AEC5A119C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CD52D90-7ACD-4FB9-9B5E-598FA92FC8AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CD52D90-7ACD-4FB9-9B5E-598FA92FC8AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CD52D90-7ACD-4FB9-9B5E-598FA92FC8AC}.Local|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CD52D90-7ACD-4FB9-9B5E-598FA92FC8AC}.Local|Any CPU.Build.0 = Debug|Any CPU
+		{6CD52D90-7ACD-4FB9-9B5E-598FA92FC8AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CD52D90-7ACD-4FB9-9B5E-598FA92FC8AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

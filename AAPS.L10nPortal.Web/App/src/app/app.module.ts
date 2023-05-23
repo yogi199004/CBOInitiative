@@ -13,7 +13,7 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { AssetsComponent } from "./components/assets/assets.component";
 import { TimeoutComponent } from "./components/timeout/timeout.component";
-import { SortFilterComponent } from './components/sort-filter/sort-filter.component';
+
 import { EmptyResultsComponent } from './empty-results/empty-results.component';
 
 import { AssetRepository } from "./repositories/asset.repository";
@@ -46,7 +46,6 @@ import { FilterPipe } from './pipes/filter.pipe';
     TimeoutComponent,
     MilisecondsToSecondsPipe,
     MilisecondsToMinutesPipe,
-    SortFilterComponent,
     EmptyResultsComponent,
     FilterPipe,
   ],

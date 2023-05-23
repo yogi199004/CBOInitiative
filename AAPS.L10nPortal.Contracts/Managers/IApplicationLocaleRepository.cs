@@ -6,7 +6,7 @@ namespace AAPS.L10nPortal.Contracts.Managers
     {
         Task<UserApplicationLocale> CreateUserApplicationLocaleAsync(PermissionData permissionData, CreateUserApplicationLocaleModel model);
         Task<UserApplicationLocale> ReassignApplicationLocaleAsync(PermissionData permissionData, int applicationLocaleId, Guid assignFromUserId, string reassignToUserEmail);
-        Task<IEnumerable<UserApplicationLocale>> GetUserApplicationLocaleListAsync(PermissionData permissionData);
+        Task<IEnumerable<UserApplicationLocale>> GetUserApplicationLocaleListAsync();
         Task<UserApplicationLocale> GetApplicationLocaleByIdAsync(PermissionData permissionData, int applicationLocaleId);
         Task<IEnumerable<ApplicationLocaleValue>> GetApplicationLocaleValueListAsync(PermissionData permissionData, int applicationLocaleId);
         Task<int> ApplicationLocaleValueMergeAsync(PermissionData permissionData, int applicationLocaleId, IEnumerable<ApplicationLocaleValue> values);

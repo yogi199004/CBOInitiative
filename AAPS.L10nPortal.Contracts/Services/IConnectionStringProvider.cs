@@ -2,6 +2,6 @@
 {
     public interface IConnectionStringProvider
     {
-        //Task<string> GetConnectionString(string connectionStringName, string passwordSecretName);
+        Task<string> GetConnectionString(string connectionStringName, string passwordSecretName);
     }
 }

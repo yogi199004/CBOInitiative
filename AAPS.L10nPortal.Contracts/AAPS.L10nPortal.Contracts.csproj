@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DbDataReaderMapper" Version="1.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AAPS.L10nPortal.Entities\AAPS.L10nPortal.Entities.csproj" />
   </ItemGroup>
 

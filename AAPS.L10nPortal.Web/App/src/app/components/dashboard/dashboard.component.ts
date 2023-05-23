@@ -59,12 +59,13 @@ export class DashboardComponent implements OnInit {
   }
 
   private init(forceGetUser: boolean = false): void {
-    this.getCurrentUserAsync(forceGetUser)
-      .then(() => {
-        this.populateDashboardData()
-      });
-
-    this.getAvailablesLocales();
+    //this.getCurrentUserAsync(forceGetUser)
+    //  .then(() => {
+    //    this.populateDashboardData()
+    //  });
+    this.populateDashboardData();
+    //debugger;
+    //this.getAvailablesLocales();
 
   }
   populateDashboardData() {
@@ -76,30 +77,10 @@ export class DashboardComponent implements OnInit {
       this.getLocalesAsync()
     }
   }
-  private getCurrentUserAsync(forceGetUser: boolean = false): Promise<void> {
-    return this.userService
-      .getCurrentUserAsync(forceGetUser)
-      .then(user => {
-        this.applications = user.ApplicationManager;
 
-        this.isUserAppManager = this.applications.length > 0;
-        this.applicationInsightsService.SetUserContext(user.GlobalPersonUid);
-
-        this.userService.getSuperadminAccessdata().then((result) => {
-          if (result == true) {
-            this.superAdmin = true;
-          }
-          else {
-            this.superAdmin = false;
-          }
-        },
-          (response) => {
-            this.errorMessage = response.error.Message;
-          });;
-      });
-  }
 
   private getLocalesAsync(): void {
+    debugger;
     this.dashboardService
       .getLocalesAsync()
       .then(data => {

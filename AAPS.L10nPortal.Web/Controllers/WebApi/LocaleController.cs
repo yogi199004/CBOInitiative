@@ -1,6 +1,7 @@
 ﻿using AAPS.L10nPortal.Contracts.Managers;
 using AAPS.L10nPortal.Contracts.Services;
 using AAPS.L10nPortal.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AAPS.L10nPortal.Web.Controllers.WebApi
@@ -18,9 +19,9 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
             Logger = _log;
 
         }
-
+        [AllowAnonymous]
         [HttpGet]
-        public async Task<IEnumerable<Locale>> GetLocalesList()
+        public  IEnumerable<Locale> GetLocalesList()
         {
 
             try

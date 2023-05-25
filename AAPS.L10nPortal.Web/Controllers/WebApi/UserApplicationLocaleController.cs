@@ -1,8 +1,10 @@
 ﻿using AAPS.L10nPortal.Contracts.Managers;
 using AAPS.L10nPortal.Contracts.Services;
 using AAPS.L10nPortal.Entities;
+using AAPS.L10NPortal.Common;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using System.Net;
 
 namespace AAPS.L10nPortal.Web.Controllers.WebApi
@@ -14,27 +16,29 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
 
         private ITranslationExchangeManager TranslationExchangeManager { get; }
 
-        private ILogger<UserApplicationLocaleController> Logger { get; }
 
-        public UserApplicationLocaleController(ILogger<UserApplicationLocaleController> _log, IPermissionDataService permissionDataService, IApplicationLocaleManager applicationLocaleManager, ITranslationExchangeManager translationExchangeManager) : base(permissionDataService)
+        private readonly LogApi Logapi;
+
+        public UserApplicationLocaleController(IPermissionDataService permissionDataService, IApplicationLocaleManager applicationLocaleManager, ITranslationExchangeManager translationExchangeManager, IOptions<AppSettings> appSettings) : base(permissionDataService)
         {
-            this.ApplicationLocaleManager = applicationLocaleManager;
-            this.TranslationExchangeManager = translationExchangeManager;
-            Logger = _log;
+            ApplicationLocaleManager = applicationLocaleManager;
+            TranslationExchangeManager = translationExchangeManager;
+            Logapi = new LogApi(appSettings?.Value);
+
         }
         [HttpGet]
         [AllowAnonymous]
         public async Task<IEnumerable<UserApplicationLocale>> Get()
         {
-            //var permissionData = CreatePermissionData();
 
             try
             {
+                Logapi.WriteToLog("Application Started", LogLevelEnum.Information);
                 return await this.ApplicationLocaleManager.GetUserApplicationLocaleListAsync();
             }
             catch (Exception ex)
             {
-                Logger.LogError(ex, ex.Message);
+                Logapi.WriteToLog(ex.GetBaseException().Message, LogLevelEnum.Error);
                 return null;
             }
         }
@@ -54,8 +58,8 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
             }
             catch (Exception ex)
             {
-                Logger.LogInformation(ex, GetUserInfo(permissionData?.UserEmail));
-                Logger.LogError(ex, ex.Message);
+                Logapi.WriteToLog(GetUserInfo(permissionData?.UserEmail), LogLevelEnum.Information);
+                Logapi.WriteToLog(ex.GetBaseException().Message, LogLevelEnum.Error);
                 return null;
             }
         }
@@ -73,7 +77,7 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
             }
             catch (Exception ex)
             {
-                Logger.LogError(ex, ex.Message);
+                Logapi.WriteToLog(ex.GetBaseException().Message, LogLevelEnum.Error);
                 return null;
             }
         }
@@ -93,7 +97,7 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
             }
             catch (Exception ex)
             {
-                Logger.LogError(ex, ex.Message);
+                Logapi.WriteToLog(ex.GetBaseException().Message, LogLevelEnum.Error);
                 return null;
             }
         }
@@ -113,7 +117,7 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
             catch (Exception ex)
 
             {
-                Logger.LogError(ex, ex.Message);
+                Logapi.WriteToLog(ex.GetBaseException().Message, LogLevelEnum.Error);
                 return null;
             }
         }
@@ -131,17 +135,10 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
             }
             catch (Exception ex)
             {
-                Logger.LogError(ex, ex.Message);
+                Logapi.WriteToLog(ex.GetBaseException().Message, LogLevelEnum.Error);
                 return null;
             }
         }
-
-
-
-
-
-
-
 
     }
 }

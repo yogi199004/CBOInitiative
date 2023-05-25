@@ -1,7 +1,9 @@
 ﻿using AAPS.L10nPortal.Batch.Model;
+using AAPS.L10NPortal.Common;
 using Hangfire;
 using Hangfire.Server;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace AAPS.L10nPortal.Batch.Controllers
 {
@@ -9,12 +11,27 @@ namespace AAPS.L10nPortal.Batch.Controllers
     [ApiController]
     public class ConfigureController : ControllerBase
     {
+        private readonly LogApi Logapi;
+
+        public ConfigureController(IOptions<AppSettings> appSettings) 
+        {            
+            Logapi = new LogApi(appSettings?.Value);
+        }
 
         [HttpGet]
         [Route("[action]")]
         public string CheckBatch()
         {
-            return "Batch is Live! " + DateTime.Now.ToString("MM/dd/yyyy");
+            try
+            {
+                Logapi.WriteToLog("Batch is Live! ", LogLevelEnum.Information);
+                return "Batch is Live! " + DateTime.Now.ToString("MM/dd/yyyy");
+            }
+            catch (Exception ex)
+            {
+                Logapi.WriteToLog(ex.GetBaseException().Message, LogLevelEnum.Error);
+                return null;
+            }
         }
 
         [HttpGet]

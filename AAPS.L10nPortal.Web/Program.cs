@@ -11,6 +11,7 @@ using AAPS.L10nPortal.Contracts.Services;
 using AAPS.L10nPortal.Dal;
 using AAPS.L10nPortal.Secrets;
 using AAPS.L10nPortal.Web.Handlers;
+using AAPS.L10NPortal.Common;
 using AAPS.L10NPortal.Common.Services;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
@@ -20,11 +21,17 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.UI;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext()
+    .CreateLogger();
+builder.Logging.AddSerilog(logger);
 
-
+var configValue = builder.Configuration.GetSection("AppSettings").Get<AppSettings>();
 
 
 builder.Services.Configure<CookiePolicyOptions>(options =>
@@ -88,6 +95,7 @@ builder.Services.AddAntiforgery(options => options.Cookie.Name = ".AspNetCore.An
 
 // Add services to the container.
 
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 builder.Services.AddSingleton<IOpmDataProvider, OpmDataProvider>();
 
 builder.Services.AddSingleton<IConnectionStringProvider, AppConfigConnectionStringProvider>();

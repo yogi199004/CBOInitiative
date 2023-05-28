@@ -1,4 +1,3 @@
-
 using AAPS.L10nPortal.Bal;
 using AAPS.L10nPortal.Bal.AzureBlob;
 using AAPS.L10nPortal.Bal.Services;
@@ -14,7 +13,6 @@ using AAPS.L10nPortal.Web.Handlers;
 using AAPS.L10NPortal.Common;
 using AAPS.L10NPortal.Common.Services;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -24,14 +22,13 @@ using Microsoft.Identity.Web.UI;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var configValue = builder.Configuration.GetSection("AppSettings").Get<AppSettings>();
 var logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
     .Enrich.FromLogContext()
-    .CreateLogger();
+     .Enrich.WithProperty("Environment", "UI - " + configValue.Environment)
+    .WriteTo.Seq(configValue.Sequrl, period: TimeSpan.Zero, batchPostingLimit: 5).CreateLogger();
 builder.Logging.AddSerilog(logger);
-
-var configValue = builder.Configuration.GetSection("AppSettings").Get<AppSettings>();
 
 
 builder.Services.Configure<CookiePolicyOptions>(options =>
@@ -49,8 +46,8 @@ builder.Services.AddAuthentication(DefaultAuthenticationTypes.ApplicationCookie)
 
     options.LoginPath = "/Login";
     options.LogoutPath = "/Logout";
-}); ;
-    //.AddMicrosoftIdentityWebApp(options => builder.Configuration.Bind("AzureAd", options));
+});
+//.AddMicrosoftIdentityWebApp(options => builder.Configuration.Bind("AzureAd", options));
 
 
 builder.WebHost.ConfigureKestrel(options =>

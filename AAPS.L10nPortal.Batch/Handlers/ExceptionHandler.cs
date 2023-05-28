@@ -1,10 +1,10 @@
-﻿using AAPS.L10nPortal.Bal.Exceptions;
-using AAPS.L10nPortal.Dal.Exceptions;
-using AAPS.L10nPortal.Web.Models;
+﻿using System.Net.Mime;
 using System.Net;
-using System.Net.Mime;
+using AAPS.L10nPortal.Bal.Exceptions;
+using AAPS.L10nPortal.Dal.Exceptions;
+using AAPS.L10nPortal.Batch.Model;
 
-namespace AAPS.L10nPortal.Web.Handlers
+namespace AAPS.L10nPortal.Batch.Handlers
 {
     public class ExceptionHandler
     {
@@ -57,14 +57,8 @@ namespace AAPS.L10nPortal.Web.Handlers
 
         public ErrorMessageResult HandleException(HttpContext context, Exception exception)
         {
-
-
-            var userInfo = "User Email : " + context.User.Identity.Name;
-
-            _logger.LogError(exception, userInfo);
-
+            _logger.LogError(exception, exception.Message);
             return HandleCore(exception, context);
-
         }
 
         public ErrorMessageResult HandleCore(Exception exception, HttpContext context)
@@ -91,8 +85,6 @@ namespace AAPS.L10nPortal.Web.Handlers
                 var error = new ErrorMessageResult((int)HttpStatusCode.BadRequest, exception.Message);
                 return error;
             }
-
-
             else
             {
                 return null;
@@ -100,7 +92,6 @@ namespace AAPS.L10nPortal.Web.Handlers
 
 
         }
-
 
     }
 }

@@ -4,13 +4,14 @@ using Hangfire.SqlServer;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+var configValue = builder.Configuration.GetSection("AppSettings").Get<AppSettings>();
 var logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
     .Enrich.FromLogContext()
-    .CreateLogger();
+     .Enrich.WithProperty("Environment", "Batch - " + configValue.Environment)
+    .WriteTo.Seq(configValue.Sequrl, period: TimeSpan.Zero, batchPostingLimit: 5).CreateLogger();
 builder.Logging.AddSerilog(logger);
 
-var configValue = builder.Configuration.GetSection("AppSettings").Get<AppSettings>();
 
 // Add services to the container.
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
@@ -24,7 +25,8 @@ builder.Services.AddHangfire(configuration => configuration
            SlidingInvisibilityTimeout = TimeSpan.FromMinutes(5),
            QueuePollInterval = TimeSpan.Zero,
            UseRecommendedIsolationLevel = true,
-           DisableGlobalLocks = true
+           DisableGlobalLocks = true,
+           
        }));
 builder.Services.AddHangfireServer();
 

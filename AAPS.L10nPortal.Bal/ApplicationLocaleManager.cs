@@ -105,7 +105,6 @@ namespace AAPS.L10nPortal.Bal
 
         public async Task<IEnumerable<UserApplicationLocale>> GetUserApplicationLocaleListAsync()
         {
-            
             bool retriveFromJson = Convert.ToBoolean(config.GetRequiredSection("GetLocalesDataFromJson").Value);
             if (retriveFromJson)
             {

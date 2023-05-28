@@ -60,6 +60,11 @@ namespace AAPS.L10nPortal.Batch.Controllers
         }
         public void TestBatchImpl(PerformContext? performContext)
         {
+            int number1 = 3000;
+            int number2 = 0;
+           
+              var abc=number1 / number2;
+            
             Task.Delay(120).Wait();
         }
     }

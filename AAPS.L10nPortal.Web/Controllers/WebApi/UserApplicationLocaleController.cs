@@ -112,7 +112,7 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
 
             try
             {
-                return ApplicationLocaleManager.ApplicationOnboarding(permissionData, model);
+                return ApplicationLocaleManager.ApplicationOnboarding( model);
             }
             catch (Exception ex)
 

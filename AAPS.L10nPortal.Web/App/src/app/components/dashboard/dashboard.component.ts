@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
   editLocale = <IApplicationLocale>{};
   deletedLocale = <IApplicationLocale>{};
   highlightingError: boolean = false;
-  superAdmin: boolean = false;
+  superAdmin: boolean = true;
   errorMessage: string;
   newApp = <IApplicationLocale>{};
   addAppManager = <IApplicationLocale>{};
@@ -95,7 +95,7 @@ export class DashboardComponent implements OnInit {
 
   private setDashBoardWithLocaleData(): void {
     this.locales.forEach(locale => {
-      locale.IsSuperAppManager = this.superAdmin;
+      locale.IsSuperAppManager = true;
 
       if (locale.AppManagerCount >= 2) {
 

@@ -98,18 +98,25 @@ namespace AAPS.L10nPortal.Dal
 
         public async Task<int> ApplicationOnboarding(string UserId, string appName)
         {
-            using (var connection = await CreateSqlConnection())
+            try
             {
-
-                using (var command = new SqlCommand("spOnboardApplication", connection) { CommandType = CommandType.StoredProcedure })
+                using (var connection = await CreateSqlConnection())
                 {
-                    command.Parameters.AddWithValue("@UserId", "00000000-0000-0000-0000-00007731eedc");
-                    command.Parameters.AddWithValue("@assignToUserId", UserId);
-                    command.Parameters.AddWithValue("@ApplicationName", appName);
-                    connection.Open();
-                    var result = await command.ExecuteNonQueryAsync();
-                   return result;
+
+                    using (var command = new SqlCommand("spOnboardApplication", connection) { CommandType = CommandType.StoredProcedure })
+                    {
+                        command.Parameters.AddWithValue("@UserId", "00000000-0000-0000-0000-00007731eedc");
+                        command.Parameters.AddWithValue("@assignToUserId", "00000000-0000-0000-0000-00007731eedc");
+                        command.Parameters.AddWithValue("@ApplicationName", appName);
+                        connection.Open();
+                        var result = await command.ExecuteNonQueryAsync();
+                        return result;
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                return -1;
             }
 
 

@@ -105,10 +105,11 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
 
         [HttpPost]
         [Route("OnboardApp")]
-        [ValidateAntiForgeryToken]
+       
+        [AllowAnonymous]
         public Task<int> OnboardApp([FromBody] CreateUserApplicationModel model)
         {
-            var permissionData = CreatePermissionData();
+           
 
             try
             {

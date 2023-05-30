@@ -96,9 +96,29 @@ namespace AAPS.L10nPortal.Dal
             return 0;
         }
 
-        public int ApplicationOnboarding(PermissionData permissionData, GlobalEmployeeUser globalEmployeeUser, string appName)
+        public async Task<int> ApplicationOnboarding(string UserId, string appName)
         {
-            return 0;
+            try
+            {
+                using (var connection = await CreateSqlConnection())
+                {
+
+                    using (var command = new SqlCommand("spOnboardApplication", connection) { CommandType = CommandType.StoredProcedure })
+                    {
+                        command.Parameters.AddWithValue("@UserId", "00000000-0000-0000-0000-00007731eedc");
+                        command.Parameters.AddWithValue("@assignToUserId", "00000000-0000-0000-0000-00007731eedc");
+                        command.Parameters.AddWithValue("@ApplicationName", appName);
+                        connection.Open();
+                        var result = await command.ExecuteNonQueryAsync();
+                        return result;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                return -1;
+            }
+
 
         }
 

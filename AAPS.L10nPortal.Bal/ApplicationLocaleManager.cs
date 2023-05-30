@@ -179,22 +179,10 @@ namespace AAPS.L10nPortal.Bal
             return this.appLocaleRepository.ApplicationOriginalValueMerge(permissionData, applicationLocaleId, values);
         }
 
-        public async Task<int> ApplicationOnboarding(PermissionData permissionData, CreateUserApplicationModel model)
+        public async Task<int> ApplicationOnboarding(CreateUserApplicationModel model)
         {
             GlobalEmployeeUser assignToAppManager;
-
-            try
-            {
-                assignToAppManager = await UserManager.Resolve(model.Email);
-            }
-            catch (UserNotFoundException)
-            {
-                throw new BadRequestException($"User '{model.Email}' not found.");
-            }
-
-            await UserManager.CreateUserAsync(permissionData, assignToAppManager.GlobalPersonUid, assignToAppManager.Email);
-
-            var result = appLocaleRepository.ApplicationOnboarding(permissionData, assignToAppManager, model.ApplicationName);
+            var result = await appLocaleRepository.ApplicationOnboarding( model.Email, model.ApplicationName);
 
 
             return result;

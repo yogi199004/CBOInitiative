@@ -15,7 +15,7 @@ namespace AAPS.L10nPortal.Contracts.Repositories
         int ApplicationLocaleValueMerge(PermissionData permissionData, int applicationLocaleId, IEnumerable<ApplicationLocaleValue> values);
         int ApplicationOriginalValueMerge(PermissionData permissionData, int applicationLocaleId, IEnumerable<ResourceKeyValue> values);
         int ApplicationLocaleDelete(PermissionData permissionData, int applicationLocaleId);
-        int ApplicationOnboarding(PermissionData permissionData, GlobalEmployeeUser globalEmployeeUser, string applicationName);
+        Task<int> ApplicationOnboarding( string UserId, string applicationName);
         int AddAppManagerAsync(PermissionData permissionData, int applicationLocaleId, Guid assignToUserId);
 
     }

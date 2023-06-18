@@ -9,8 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AAPS.L10nPortal.Web.Controllers
 {
-    //[Authorize]
-    [AllowAnonymous]
+    [Authorize]
+    //[AllowAnonymous]
     public class HomeController : Controller
     {
         IAntiforgery _antiforgery;

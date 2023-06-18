@@ -19,7 +19,7 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
             Logger = _log;
 
         }
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [HttpGet]
         public  IEnumerable<Locale> GetLocalesList()
         {

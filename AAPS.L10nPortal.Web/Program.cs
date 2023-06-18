@@ -13,6 +13,7 @@ using AAPS.L10nPortal.Web.Handlers;
 using AAPS.L10NPortal.Common;
 using AAPS.L10NPortal.Common.Services;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -40,14 +41,15 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
 });
 
 
-builder.Services.AddAuthentication(DefaultAuthenticationTypes.ApplicationCookie)
-    .AddCookie(DefaultAuthenticationTypes.ApplicationCookie, options =>
-{
+builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
+    .AddMicrosoftIdentityWebApp(options => builder.Configuration.Bind("AzureAd", options));
 
-    options.LoginPath = "/Login";
-    options.LogoutPath = "/Logout";
-});
-//.AddMicrosoftIdentityWebApp(options => builder.Configuration.Bind("AzureAd", options));
+//    .AddCookie(DefaultAuthenticationTypes.ApplicationCookie, options =>
+//{
+
+//    options.LoginPath = "/Login";
+//    options.LogoutPath = "/Logout";
+//});
 
 
 builder.WebHost.ConfigureKestrel(options =>
@@ -142,10 +144,10 @@ BlobService.IConfigurationConfigure(app.Services.GetService<IConfiguration>());
 app.UseCookiePolicy();
 app.UseRouting();
 
-//app.UseAuthentication();
+app.UseAuthentication();
 
 
-//app.UseAuthorization();
+app.UseAuthorization();
 
 
 app.MapControllerRoute(

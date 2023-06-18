@@ -27,7 +27,7 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
         {
             return View();
         }
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [Route("Current")]
         public async Task<PortalUser> GetCurrent()
         {

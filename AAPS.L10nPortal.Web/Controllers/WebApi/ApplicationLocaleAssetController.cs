@@ -24,7 +24,7 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
         
         [HttpGet]
         [Route("{applicationLocaleId:int}")]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public async Task<ApplicationAssets> Get(int applicationLocaleId)
         {
             

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AAPS.L10nPortal.Web.Controllers.WebApi
 {
-    //[Authorize]
+    [Authorize]
     //[ApiController]
     public class BaseApiController : Controller
     {

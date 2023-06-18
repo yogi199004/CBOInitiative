@@ -27,9 +27,11 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
 
         }
         [HttpGet]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public async Task<IEnumerable<UserApplicationLocale>> Get()
         {
+
+            var permission = CreatePermissionData();
 
             try
             {
@@ -106,7 +108,7 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
         [HttpPost]
         [Route("OnboardApp")]
        
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public Task<int> OnboardApp([FromBody] CreateUserApplicationModel model)
         {
            

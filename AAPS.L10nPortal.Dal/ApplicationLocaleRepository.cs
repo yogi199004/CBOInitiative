@@ -28,7 +28,7 @@ namespace AAPS.L10nPortal.Dal
         {
             return new List<ApplicationLocaleModel>();
         }
-        public async Task<IEnumerable<UserApplicationLocale>> GetUserApplicationLocaleList()
+        public async Task<IEnumerable<UserApplicationLocale>> GetUserApplicationLocaleList(PermissionData permissionData)
         {
             List<UserApplicationLocale> userApplicationLocaleList = new List<UserApplicationLocale>();
             using (var connection = await CreateSqlConnection())
@@ -36,7 +36,7 @@ namespace AAPS.L10nPortal.Dal
 
                 using (var command = new SqlCommand("spUserApplicationLocaleGetList", connection) { CommandType = CommandType.StoredProcedure })
                 {
-                    command.Parameters.AddWithValue("@userId", "00000000-0000-0000-0000-00007731eedc");
+                    command.Parameters.AddWithValue("@userId", permissionData.UserId);
                     connection.Open();
                     var reader = await command.ExecuteReaderAsync();
                     while (reader.Read())

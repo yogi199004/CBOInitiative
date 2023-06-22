@@ -36,7 +36,7 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
             try
             {
                 Logapi.WriteToLog("Application Started", LogLevelEnum.Information);
-                return await this.ApplicationLocaleManager.GetUserApplicationLocaleListAsync();
+                return await this.ApplicationLocaleManager.GetUserApplicationLocaleListAsync(permission);
             }
             catch (Exception ex)
             {

@@ -150,6 +150,7 @@
     <Build Include="dbo\Stored Procedures\spGetKeyValuesForAppWithDeletedKey.sql" />
     <Build Include="dbo\Stored Procedures\spCheckAdminPermissions.sql" />
     <Build Include="dbo\Stored Procedures\spCheckAppMgrPermissions.sql" />
+    <Build Include="dbo\Stored Procedures\spResolveUser.sql" />
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="PreDeploymentScripts\Script.PreDeployment.sql" />

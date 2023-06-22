@@ -103,7 +103,7 @@ namespace AAPS.L10nPortal.Bal
             return await ResolveUsers(applicationLocale);
         }
 
-        public async Task<IEnumerable<UserApplicationLocale>> GetUserApplicationLocaleListAsync()
+        public async Task<IEnumerable<UserApplicationLocale>> GetUserApplicationLocaleListAsync(PermissionData permissionData)
         {
             bool retriveFromJson = Convert.ToBoolean(config.GetRequiredSection("GetLocalesDataFromJson").Value);
             if (retriveFromJson)
@@ -117,7 +117,7 @@ namespace AAPS.L10nPortal.Bal
 
             else
             {
-                 var locales = await this.appLocaleRepository.GetUserApplicationLocaleList();
+                 var locales = await this.appLocaleRepository.GetUserApplicationLocaleList(permissionData);
                 //var locales = new List<UserApplicationLocale>();
                 var uids = locales.GroupBy(l => l.UserId).Select(group => group.Key);
                 var localeUsers = await UserManager.Resolve(uids);

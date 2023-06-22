@@ -1,6 +1,9 @@
 ﻿using AAPS.L10nPortal.Contracts.Repositories;
 using AAPS.L10nPortal.Contracts.Services;
 using AAPS.L10nPortal.Entities;
+using System.Data.SqlClient;
+using System.Data;
+using DbDataReaderMapper;
 
 namespace AAPS.L10nPortal.Dal
 {
@@ -38,7 +41,28 @@ namespace AAPS.L10nPortal.Dal
         }
 
 
+        public async Task<IEnumerable<GlobalEmployeeUser>> ResolveUser(string email)
+        {
+            List<GlobalEmployeeUser> globalEmployeeUserList = new List<GlobalEmployeeUser>();
+            using (var connection = await CreateSqlConnection())
+            {
 
+                using (var command = new SqlCommand("spResolveUser", connection) { CommandType = CommandType.StoredProcedure })
+                {
+                    command.Parameters.AddWithValue("@email", email);
+                    connection.Open();
+                    var reader = await command.ExecuteReaderAsync();
+                    while (reader.Read())
+                    {
+                        var globalEmployeeUser = reader.MapToObject<GlobalEmployeeUser>();
+                        globalEmployeeUserList.Add(globalEmployeeUser);
+
+                    }
+                }
+            }
+
+            return globalEmployeeUserList;
+        }
 
     }
 }

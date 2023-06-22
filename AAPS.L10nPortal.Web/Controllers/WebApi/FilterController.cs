@@ -29,7 +29,7 @@ namespace AAPS.L10nPortal.Web.Controllers.WebApi
             var permissionData = CreatePermissionData();
             try
             {
-                var Locales = await this.ApplicationLocaleManager.GetUserApplicationLocaleListAsync();
+                var Locales = await this.ApplicationLocaleManager.GetUserApplicationLocaleListAsync(permissionData);
                 List<UserApplicationLocale> userApplicationLocale = new List<UserApplicationLocale>();
 
                 if (data.IsFirstFilter)

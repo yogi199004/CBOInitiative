@@ -7,7 +7,7 @@ namespace AAPS.L10nPortal.Contracts.Repositories
         UserApplicationLocale CreateUserApplicationLocaleAsync(PermissionData permissionData, int applicationId, int localeId, Guid assignTo);
         UserApplicationLocale ReassignApplicationLocaleAsync(PermissionData permissionData, int applicationLocaleId, Guid assignFromUserId, Guid assignToUserId);
         IEnumerable<ApplicationLocaleModel> GetApplicationLocaleListAsync();
-        Task<IEnumerable<UserApplicationLocale>> GetUserApplicationLocaleList();
+        Task<IEnumerable<UserApplicationLocale>> GetUserApplicationLocaleList(PermissionData permissionData);
 
         //IEnumerable<UserApplicationLocale> GetUserApplicationLocaleList();
         IEnumerable<ApplicationLocaleValue> GetApplicationLocaleValueList(PermissionData permissionData, int applicationLocaleId);

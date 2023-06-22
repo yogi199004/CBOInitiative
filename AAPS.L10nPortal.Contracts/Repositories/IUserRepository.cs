@@ -1,4 +1,5 @@
 ﻿using AAPS.L10nPortal.Entities;
+using System.Collections.Generic;
 
 namespace AAPS.L10nPortal.Contracts.Repositories
 {
@@ -9,5 +10,7 @@ namespace AAPS.L10nPortal.Contracts.Repositories
         IEnumerable<Application> GetUserApplicationsAsync(PermissionData permissionData, bool? canManage);
 
         Task<bool> GetAdminUserAsync(PermissionData permission);
+
+        Task<IEnumerable<GlobalEmployeeUser>> ResolveUser(string email);
     }
 }

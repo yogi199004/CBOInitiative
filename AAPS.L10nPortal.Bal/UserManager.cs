@@ -49,8 +49,8 @@ namespace AAPS.L10nPortal.Bal
 
             
             
-            //return await Resolve(principalData.UserEmail);
-            return await Resolve("yodubey@deloitte.com");
+            return await Resolve(principalData.UserEmail);
+            //return await Resolve("yodubey@deloitte.com");
 
         }
 
@@ -70,12 +70,13 @@ namespace AAPS.L10nPortal.Bal
 
         public async Task<GlobalEmployeeUser> Resolve(string email)
         {
-            List<GlobalEmployeeUser>? users = null;
+            IEnumerable<GlobalEmployeeUser>? users = null;
             try
             {
-                users = (await OpmDataProvider.GetByEmailAsync(email))?
-                    .Where(u => !string.IsNullOrEmpty(u.EmployeeStatusCode) && u.EmployeeStatusCode.Equals(EmployeeStatusCodeActive))
-                    .ToList();
+                users = await UserRepository.ResolveUser(email);
+                //users = (await OpmDataProvider.GetByEmailAsync(email))?
+                //    .Where(u => !string.IsNullOrEmpty(u.EmployeeStatusCode) && u.EmployeeStatusCode.Equals(EmployeeStatusCodeActive))
+                //    .ToList();
             }
             catch (Exception e)
             {
@@ -92,7 +93,7 @@ namespace AAPS.L10nPortal.Bal
                 throw new UserNotFoundException();
             }
 
-            if (users.Count > 1)
+            if (users.Count() > 1)
             {
                 throw new DuplicatedUserException();
             }

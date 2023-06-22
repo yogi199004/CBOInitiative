@@ -21,24 +21,24 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
    
-    //this.userService
-    //  .getCurrentUserAsync()
-    //  .then(data => {
-    //    this.userDetails = data;
+    this.userService
+      .getCurrentUserAsync()
+      .then(data => {
+        this.userDetails = data;
 
-    //    if (!this.userDetails && !this.userDetails.PreferredFullName) {
-    //      return;
-    //    }
+        if (!this.userDetails && !this.userDetails.PreferredFullName) {
+          return;
+        }
 
-    //    const userName = this.userDetails.PreferredFullName.split(',');
+        const userName = this.userDetails.PreferredFullName.split(',');
 
-    //    if (userName && userName.length === 2) {
-    //      this.userNameDisplay = userName[1].slice(1, 2) + userName[0].slice(0, 1);
-    //    }
-    //  });
+        if (userName && userName.length === 2) {
+          this.userNameDisplay = userName[1].slice(1, 2) + userName[0].slice(0, 1);
+        }
+      });
 
-    const userName = "Yogesh, Dubey";
-    this.userNameDisplay = "Yogesh Dubey";
+    //const userName = "Yogesh, Dubey";
+    //this.userNameDisplay = "Yogesh Dubey";
   }
 
   navigateToDashboard(): void {

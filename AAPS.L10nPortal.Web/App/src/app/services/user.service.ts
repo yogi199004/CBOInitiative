@@ -7,7 +7,7 @@ export class UserService {
   constructor(
     private userRepository: UserRepository
   ) {
-   // this.init();
+    this.init();
   }
 
   private currentUserPromise: Promise<IUser> = null;

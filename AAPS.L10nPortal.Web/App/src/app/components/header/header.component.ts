@@ -20,10 +20,11 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-   
+    debugger;
     this.userService
       .getCurrentUserAsync()
       .then(data => {
+        
         this.userDetails = data;
 
         if (!this.userDetails && !this.userDetails.PreferredFullName) {

@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    debugger;
     this.userService
       .getCurrentUserAsync()
       .then(data => {

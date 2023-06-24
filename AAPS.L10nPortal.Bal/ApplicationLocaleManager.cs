@@ -120,17 +120,17 @@ namespace AAPS.L10nPortal.Bal
                  var locales = await this.appLocaleRepository.GetUserApplicationLocaleList(permissionData);
                 //var locales = new List<UserApplicationLocale>();
                 var uids = locales.GroupBy(l => l.UserId).Select(group => group.Key);
-                var localeUsers = await UserManager.Resolve(uids);
-                foreach (var applicationLocale in locales)
-                {  GlobalEmployeeUser user;
-                    localeUsers.TryGetValue(applicationLocale.UserId, out user);
-                    if (user == null)
-                    {applicationLocale.PreferredName = applicationLocale.UserId.ToString();
-                        continue;
-                    }
-                    applicationLocale.PreferredName = user.PreferredFullName;
-                    applicationLocale.UserEmail = user.Email;
-                }
+                //var localeUsers = await UserManager.Resolve(uids);
+                //foreach (var applicationLocale in locales)
+                //{  GlobalEmployeeUser user;
+                //    localeUsers.TryGetValue(applicationLocale.UserId, out user);
+                //    if (user == null)
+                //    {applicationLocale.PreferredName = applicationLocale.UserId.ToString();
+                //        continue;
+                //    }
+                //    applicationLocale.PreferredName = user.PreferredFullName;
+                //    applicationLocale.UserEmail = user.Email;
+                //}
 
                 return locales;
             }

@@ -17,17 +17,10 @@
           <div class="user-image">{{userNameDisplay}}</div>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" [ngClass]="{ show : toggleDropDown}">
-          <div class="user-image">
-            <span class="user-initials">{{userNameDisplay}}</span>
-          </div>
+         
           <div class="userInfo" *ngIf="userDetails">
-            <div class="name">{{userDetails.PreferredFullName}}</div>
+         
             <div class="email">{{userDetails.Email}}</div>
-          </div>
-          <div class="cookie-btn">
-            <!-- OneTrust Cookies Settings button start -->
-            <button id="ot-sdk-btn" class="ot-sdk-show-settings">Cookie Settings</button>
-            <!-- OneTrust Cookies Settings button end -->
           </div>
           <div class="logout" (click)="logout()">Log Out</div>
         </div>

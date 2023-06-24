@@ -3,7 +3,7 @@ AS
 SELECT
 	 al.[ApplicationLocaleId]
 	,ual.UserId             AS [UserId]
-	,'u.Email'              AS [UserEmail]      -- OBSOLETE. TODO: Remove
+	,u.Email              AS [UserEmail]      -- OBSOLETE. TODO: Remove
 	,'u.PreferredName'      AS [PreferredName]  -- OBSOLETE. TODO: Remove
 	,al.[ApplicationId]
 	,al.[ApplicationName]

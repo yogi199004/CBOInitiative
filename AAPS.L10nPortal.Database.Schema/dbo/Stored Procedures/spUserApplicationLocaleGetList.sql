@@ -7,7 +7,7 @@ BEGIN
 	Create table #tblUserApplicationLocales
 (ApplicationLocaleId int
 ,UserId uniqueidentifier
-,UserEmail varchar(7)
+,UserEmail varchar(100)
 ,PreferredName varchar(15)
 ,ApplicationId int
 ,ApplicationName nvarchar(128)

@@ -1,5 +1,4 @@
-﻿-- sql account
-:r "AlterDatabaseAddUser.sql"
+﻿
 
 -- dictionary data
 :r "Dictionaries.sql"

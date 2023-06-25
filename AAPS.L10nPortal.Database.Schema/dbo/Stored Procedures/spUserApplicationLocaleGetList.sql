@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE spUserApplicationLocaleGetList
-	@userId UNIQUEIDENTIFIER
+	@userEmail varchar(100)
 AS
 BEGIN
 	SET NOCOUNT ON;
@@ -70,7 +70,7 @@ SELECT
 ,[TotalLabelsCount]
 ,[TotalAssetsCount]
 ,[UploadedAssetCount]
-,CAST(CASE WHEN [UserId] = @userId THEN 1 ELSE 0 END AS bit) AS [CanEdit]
+,CAST(CASE WHEN [UserEmail] = @userEmail THEN 1 ELSE 0 END AS bit) AS [CanEdit]
 FROM
 [dbo].[UserApplicationLocaleView] WITH (NOLOCK)
 --ORDER BY [CanEdit] desc,[ApplicationName], [LocaleCode]

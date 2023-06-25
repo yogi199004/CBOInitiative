@@ -36,7 +36,7 @@ namespace AAPS.L10nPortal.Dal
 
                 using (var command = new SqlCommand("spUserApplicationLocaleGetList", connection) { CommandType = CommandType.StoredProcedure })
                 {
-                    command.Parameters.AddWithValue("@userId", permissionData.UserId);
+                    command.Parameters.AddWithValue("@userEmail", permissionData.UserEmail);
                     connection.Open();
                     var reader = await command.ExecuteReaderAsync();
                     while (reader.Read())

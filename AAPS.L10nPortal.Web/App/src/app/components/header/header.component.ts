@@ -26,15 +26,7 @@ export class HeaderComponent implements OnInit {
         
         this.userDetails = data;
 
-        if (!this.userDetails && !this.userDetails.PreferredFullName) {
-          return;
-        }
-
-        const userName = this.userDetails.PreferredFullName.split(',');
-
-        if (userName && userName.length === 2) {
-          this.userNameDisplay = userName[1].slice(1, 2) + userName[0].slice(0, 1);
-        }
+      
       });
 
     //const userName = "Yogesh, Dubey";

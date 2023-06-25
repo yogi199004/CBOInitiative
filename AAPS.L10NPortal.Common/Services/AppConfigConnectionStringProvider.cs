@@ -9,7 +9,7 @@ namespace AAPS.L10NPortal.Common.Services
         public Task<string> GetConnectionString(string connectionStringName, string passwordSecretName)
         {
             //return Task.FromResult(ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString);
-            return Task.FromResult("Data Source=localhost;Initial Catalog=L10nPortal;Integrated Security=True");
+            return Task.FromResult("Data Source=localhost;Initial Catalog=CAPPortal;Integrated Security=True");
         }
 
     }

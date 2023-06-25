@@ -266,7 +266,7 @@ INSERT dbo.ApplicationResourceValue(ApplicationResourceKeyId, LocaleId, CreatedD
 INSERT dbo.ApplicationResourceValue(ApplicationResourceKeyId, LocaleId, CreatedDate, CreatedBy, UpdatedDate, UpdatedBy, Value) VALUES (72,133,'2018-04-18 10:06:12.303', '00000000-0000-0000-0000-0000000004D8', '2018-04-17 10:06:18.097', '00000000-0000-0000-0000-0000000004D8', N'Test Fr 72')
 GO
 
-INSERT dbo.[User](Id, Email, PreferredName, CreatedBy, CreatedDate, UpdatedBy, UpdatedDate) VALUES ('00000000-0000-0000-0000-0000000004D7', N'cbironas@tst.deloitte.com', '', NULL, NULL, NULL, NULL)
+INSERT dbo.[User](Id, Email, PreferredName, CreatedBy, CreatedDate, UpdatedBy, UpdatedDate) VALUES (newID(), N'yodubey@deloitte.com', '', NULL, NULL, NULL, NULL)
 INSERT dbo.[User](Id, Email, PreferredName, CreatedBy, CreatedDate, UpdatedBy, UpdatedDate) VALUES ('00000000-0000-0000-0000-0000000004D8', N'dpopko@tst.deloitte.com', '', NULL, NULL, NULL, NULL)
 INSERT dbo.[User](Id, Email, PreferredName, CreatedBy, CreatedDate, UpdatedBy, UpdatedDate) VALUES ('00000000-0000-0000-0000-0000000004D9', N'Oleksii.Dombrovskyi@tst.deloitte.com', '', NULL, NULL, NULL, NULL)
 INSERT dbo.[User](Id, Email, PreferredName, CreatedBy, CreatedDate, UpdatedBy, UpdatedDate) VALUES ('00000000-0000-0000-0000-0000000004DA', N'sstrelbitskyy@tst.deloitte.com', '', NULL, NULL, NULL, NULL)
@@ -278,30 +278,6 @@ INSERT dbo.[User](Id, Email, PreferredName, CreatedBy, CreatedDate, UpdatedBy, U
 INSERT dbo.[User](Id, Email, PreferredName, CreatedBy, CreatedDate, UpdatedBy, UpdatedDate) VALUES ('00000000-0000-0000-0000-0000000004E0', N'lprotsenko@deloitte.com', '', NULL, NULL, NULL, NULL)
 INSERT dbo.[User](Id, Email, PreferredName, CreatedBy, CreatedDate, UpdatedBy, UpdatedDate) VALUES ('00000000-0000-0000-0000-0000000004E1', N'dbabych@deloitte.com', '', NULL, NULL, NULL, NULL)
 INSERT dbo.[User](Id, Email, PreferredName, CreatedBy, CreatedDate, UpdatedBy, UpdatedDate) VALUES ('00000000-0000-0000-0000-0000000004E2', N'achebotarov@deloitte.com', '', NULL, NULL, NULL, NULL)
-GO
 
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004D7', 1)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004D8', 2)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004D9', 3)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004DA', 4)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004DB', 5)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004DC', 6)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004DD', 7)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004DE', 8)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004D7', 9)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004D8', 10)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004D9', 11)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004DA', 12)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004DB', 13)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004DC', 14)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004DD', 15)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004DE', 16)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004D7', 17)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004D8', 18)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004D9', 19)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004DA', 20)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004DB', 21)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004DC', 22)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004DD', 23)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004DE', 24)
-INSERT dbo.UserApplicationLocale(UserId, ApplicationLocaleId) VALUES ('00000000-0000-0000-0000-0000000004DF', 4)
+
+

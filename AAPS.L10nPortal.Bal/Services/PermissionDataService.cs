@@ -20,13 +20,14 @@ namespace AAPS.L10nPortal.Bal.Services
             UserManager = userManager;
 
         }
-        public PermissionData Get(IPrincipal user)
+        public  PermissionData Get(IPrincipal user)
         {
             var principalData = PrincipalDataService.Get(user);
             Guid userId;
             try
             {
                 userId = Task.Run(async () => await UserManager.Resolve(principalData).ConfigureAwait(true)).Result.GlobalPersonUid;
+                //var result  = await UserManager.Resolve(principalData);
             }
             catch (AggregateException ex)
             {

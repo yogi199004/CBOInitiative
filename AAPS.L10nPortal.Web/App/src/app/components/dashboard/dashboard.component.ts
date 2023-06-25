@@ -293,7 +293,7 @@ export class DashboardComponent implements OnInit {
 
       return;
     }
-
+    debugger;
     this.dashboardService
       .editLocaleAsync(this.editLocale)
       .then(response => {

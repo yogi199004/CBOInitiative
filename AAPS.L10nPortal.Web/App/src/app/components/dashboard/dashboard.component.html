@@ -30,12 +30,7 @@
 
      
     </th>
-    <th>
-      <a href="#" class="link-txt" role="button" id="dropdownMenuLink" data-toggle="dropdown">Last Modified Date 
-      </a>
-
-     
-    </th>
+ 
     <th>
       <span>Upload / Download</span>
     </th>
@@ -49,7 +44,7 @@
     <td>{{locale.ApplicationName}}</td>
     <td>{{locale.UserEmail}}</td>
     <td>{{locale.LocaleCode}}<br />{{locale.EnglishName}}</td>
-    <td>{{locale.UpdatedDate | date : 'medium'}}</td>
+
     <td>
       <div *ngIf="locale.CanEdit">
         <input type="file" id="file-input-{{i}}" class="file-input" (change)="uploadLocale($event, locale)" />
@@ -57,7 +52,7 @@
         <button class="img-button download-arrow" (click)="downloadLocale(locale)"></button>
       </div>
     </td>
-    <td>
+    <!--<td>
       <div class="d-flex align-items-start">
         <div class="img-button edit-button"
           *ngIf="locale.IsAppManager || locale.IsSuperAppManager && locale.LocaleCode == enUsLocaleCode"
@@ -66,7 +61,7 @@
           (click)="openDeleteLocaleModal(locale)"></div>
 
       </div>
-    </td>
+    </td>-->
     <td class="d-flex">
       <button class="btn btn-primary text-button" *ngIf="locale.CanEdit && locale.TotalAssetsCount > 0"
         (click)="navigateToLocaleAssets(locale.ApplicationLocaleId)">

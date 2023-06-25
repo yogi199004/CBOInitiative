@@ -1,107 +1,96 @@
-﻿-- System user
-MERGE INTO dbo.[User] AS t
+﻿
+
+ --Applications
+MERGE INTO dbo.[Application] AS t
 USING (VALUES
-	('00000000-0000-0000-0000-000000000000',  N'system@L10nPortal.deloitte.com')
-) AS s ([Id], [Email])
-ON t.[Id] = s.[Id]
+		(N'Connect',0,1),
+	(N'Reveal',0,2),
+	(N'iConfirm',0,3),
+	(N'iCount',0,4),
+    (N'Signal',0,5),
+    (N'EMSOnlineOnsitePortal',0,6),
+    (N'EMSOnlineADCPortal',0,7),
+	(N'AQMM-EM',0,8),
+	(N'DisclosureAnalyticsPlatform',0,9),
+	( N'Argus',0,10),
+	( N'DNAV',0,11),
+	( N'Levvia',0,12),
+	( N'IBRCalculator',0,13),
+	( N'SBP',0,14),
+	( N'FIRP',0,15),
+	( N'OmniaEAG',1,1),
+	( N'Scribe',0,16),
+	( N'CortexJE',0,17),
+	( N'GASS',0,18),
+	( N'Audit-Cortex',0,19),
+	( N'MATGlobal',0,20),
+	( N'Intela',0,21),
+	( N'ClientPortal',0,22),
+	( N'Levvia1',0,23),
+	( N'Levvia2',0,24),
+	( N'Levvia3',0,25),
+	( N'Levvia1-v2.0.5',0,26),
+	( N'Levvia2-v2.0.5',0,27),
+	( N'Levvia3-v2.0.5',0,28),
+	( N'Levvia1-v2.1',0,29),
+	( N'Levvia2-v2.1',0,30),
+	( N'Levvia3-v2.1',0,31),
+	( N'OmniaFIN',1,2),
+	( N'OmniaWORK',1,3),
+	( N'OmniaRAPR',1,4),
+	( N'OmniaAQM',1,5),
+	( N'OmniaDWP',1,6),
+	( N'OmniaDR',1,7),
+	( N'OmniaPS',1,8),
+	( N'OmniaALT',1,9),
+	( N'OmniaEED',1,10),
+	( N'OmniaMobile',1,11),
+	( N'App43',1,12),
+	( N'App44',1,13),
+	( N'App45',1,14),
+	( N'App46',1,15),
+	( N'r2Levvia1-v2.2',2,1),
+	( N'r2Levvia2-v2.2',2,2),
+	( N'r2Levvia3-v2.2',2,3),
+	( N'r2Levvia1-v3.0',2,4),
+	( N'r2Levvia2-v3.0',2,5),
+	( N'r2Levvia3-v3.0',2,6),
+	( N'App53',2,7),
+	( N'App54',2,8),
+	( N'App55',2,9),
+	( N'App56',2,10),
+	( N'App57',2,11),
+	( N'App58',2,12),
+	( N'App59',2,13),
+	( N'App60',2,14),
+	( N'App61',2,15),
+	( N'App62',2,16),
+	( N'App63',2,17),
+	( N'App64',2,18),
+	( N'App65',2,19),
+	( N'App66',2,20),
+	( N'App67',2,21),
+	( N'App68',2,22),
+	( N'App69',2,23),
+	( N'App70',2,24),
+	( N'App71',2,25),
+	( N'App72',2,26),
+	( N'App73',2,27),
+	( N'App74',2,28),
+	( N'App75',2,29),
+	( N'App76',2,30),
+	( N'App77',2,31)
+	
+) AS s ([Name],[RedisInstance],[RepoIndex])
+ON t.[Name] = s.[Name]
 WHEN NOT MATCHED BY TARGET THEN
-    INSERT ([Id], [Email])
-    VALUES ([Id], [Email])
+    INSERT ([Name],[RedisInstance],[RepoIndex])
+    VALUES ([Name],[RedisInstance],[RepoIndex])
 WHEN MATCHED THEN 
 UPDATE SET 
-    t.[Email] = s.[Email];
-
--- Applications
---MERGE INTO dbo.[Application] AS t
---USING (VALUES
---		(1,  N'Connect',0,1),
---	(2,  N'Reveal',0,2),
---	(3,  N'iConfirm',0,3),
---	(4,  N'iCount',0,4),
---    (5,  N'Signal',0,5),
---    (6,  N'EMSOnlineOnsitePortal',0,6),
---    (7,  N'EMSOnlineADCPortal',0,7),
---	(8,  N'AQMM-EM',0,8),
---	(9,  N'DisclosureAnalyticsPlatform',0,9),
---	(10,  N'Argus',0,10),
---	(11,  N'DNAV',0,11),
---	(12,  N'Levvia',0,12),
---	(13,  N'IBRCalculator',0,13),
---	(14,  N'SBP',0,14),
---	(15,  N'FIRP',0,15),
---	(16,  N'OmniaEAG',1,1),
---	(17,  N'Scribe',0,16),
---	(18,  N'CortexJE',0,17),
---	(19,  N'GASS',0,18),
---	(20,  N'Audit-Cortex',0,19),
---	(21,  N'MATGlobal',0,20),
---	(22,  N'Intela',0,21),
---	(23,  N'ClientPortal',0,22),
---	(24,  N'Levvia1',0,23),
---	(25,  N'Levvia2',0,24),
---	(26,  N'Levvia3',0,25),
---	(27,  N'Levvia1-v2.0.5',0,26),
---	(28,  N'Levvia2-v2.0.5',0,27),
---	(29,  N'Levvia3-v2.0.5',0,28),
---	(30,  N'Levvia1-v2.1',0,29),
---	(31,  N'Levvia2-v2.1',0,30),
---	(32,  N'Levvia3-v2.1',0,31),
---	(33,  N'OmniaFIN',1,2),
---	(34,  N'OmniaWORK',1,3),
---	(35,  N'OmniaRAPR',1,4),
---	(36,  N'OmniaAQM',1,5),
---	(37,  N'OmniaDWP',1,6),
---	(38,  N'OmniaDR',1,7),
---	(39,  N'OmniaPS',1,8),
---	(40,  N'OmniaALT',1,9),
---	(41,  N'OmniaEED',1,10),
---	(42,  N'OmniaMobile',1,11),
---	(43,  N'App43',1,12),
---	(44,  N'App44',1,13),
---	(45,  N'App45',1,14),
---	(46,  N'App46',1,15),
---	(47,  N'r2Levvia1-v2.2',2,1),
---	(48,  N'r2Levvia2-v2.2',2,2),
---	(49,  N'r2Levvia3-v2.2',2,3),
---	(50,  N'r2Levvia1-v3.0',2,4),
---	(51,  N'r2Levvia2-v3.0',2,5),
---	(52,  N'r2Levvia3-v3.0',2,6),
---	(53,  N'App53',2,7),
---	(54,  N'App54',2,8),
---	(55,  N'App55',2,9),
---	(56,  N'App56',2,10),
---	(57,  N'App57',2,11),
---	(58,  N'App58',2,12),
---	(59,  N'App59',2,13),
---	(60,  N'App60',2,14),
---	(61,  N'App61',2,15),
---	(62,  N'App62',2,16),
---	(63,  N'App63',2,17),
---	(64,  N'App64',2,18),
---	(65,  N'App65',2,19),
---	(66,  N'App66',2,20),
---	(67,  N'App67',2,21),
---	(68,  N'App68',2,22),
---	(69,  N'App69',2,23),
---	(70,  N'App70',2,24),
---	(71,  N'App71',2,25),
---	(72,  N'App72',2,26),
---	(73,  N'App73',2,27),
---	(74,  N'App74',2,28),
---	(75,  N'App75',2,29),
---	(76,  N'App76',2,30),
---	(77,  N'App77',2,31)
-	
---) AS s ([Id], [Name],[RedisInstance],[RepoIndex])
---ON t.[Id] = s.[Id]
---WHEN NOT MATCHED BY TARGET THEN
---    INSERT ([Id], [Name],[RedisInstance],[RepoIndex])
---    VALUES ([Id], [Name],[RedisInstance],[RepoIndex])
---WHEN MATCHED THEN 
---UPDATE SET 
---    t.[Name] = s.[Name],t.[RedisInstance]=s.[RedisInstance],t.[RepoIndex]=s.[RepoIndex]
---WHEN NOT MATCHED BY SOURCE THEN
---    DELETE;
+    t.[Name] = s.[Name],t.[RedisInstance]=s.[RedisInstance],t.[RepoIndex]=s.[RepoIndex]
+WHEN NOT MATCHED BY SOURCE THEN
+    DELETE;
 
 
 

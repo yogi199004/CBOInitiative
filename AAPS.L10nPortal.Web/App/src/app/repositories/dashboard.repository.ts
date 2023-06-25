@@ -51,6 +51,7 @@ export class DashboardRepository extends BaseRepository {
   }
 
   editLocaleAsync(locale: IApplicationLocale) {
+    debugger;
     var request: IRequest = {
       Url: "api/UserApplicationLocale/" + locale.ApplicationLocaleId + "/Reassign",
       Body: {

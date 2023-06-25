@@ -74,9 +74,7 @@ namespace AAPS.L10nPortal.Bal
             try
             {
                 users = await UserRepository.ResolveUser(email);
-                //users = (await OpmDataProvider.GetByEmailAsync(email))?
-                //    .Where(u => !string.IsNullOrEmpty(u.EmployeeStatusCode) && u.EmployeeStatusCode.Equals(EmployeeStatusCodeActive))
-                //    .ToList();
+               
             }
             catch (Exception e)
             {

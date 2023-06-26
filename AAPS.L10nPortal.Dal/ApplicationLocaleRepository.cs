@@ -98,8 +98,7 @@ namespace CAPPortal.Dal
 
         public async Task<int> ApplicationOnboarding(PermissionData permissionData, CreateUserApplicationModel model)
         {
-            try
-            {
+            
                 using (var connection = await CreateSqlConnection())
                 {
 
@@ -111,13 +110,10 @@ namespace CAPPortal.Dal
                         connection.Open();
                         var result = await command.ExecuteNonQueryAsync();
                         return result;
+                    
                     }
                 }
-            }
-            catch(Exception ex)
-            {
-                return -1;
-            }
+           
 
 
         }

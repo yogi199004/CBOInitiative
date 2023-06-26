@@ -111,11 +111,11 @@ namespace CAPPortal.Web.Controllers.WebApi
         //[AllowAnonymous]
         public Task<int> OnboardApp([FromBody] CreateUserApplicationModel model)
         {
-           
+            var permissionData = CreatePermissionData();
 
             try
             {
-                return ApplicationLocaleManager.ApplicationOnboarding( model);
+                return ApplicationLocaleManager.ApplicationOnboarding(permissionData,model);
             }
             catch (Exception ex)
 

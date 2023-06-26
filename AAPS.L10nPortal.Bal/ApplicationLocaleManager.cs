@@ -179,10 +179,10 @@ namespace CAPPortal.Bal
             return this.appLocaleRepository.ApplicationOriginalValueMerge(permissionData, applicationLocaleId, values);
         }
 
-        public async Task<int> ApplicationOnboarding(CreateUserApplicationModel model)
+        public async Task<int> ApplicationOnboarding(PermissionData permissionData, CreateUserApplicationModel model)
         {
             GlobalEmployeeUser assignToAppManager;
-            var result = await appLocaleRepository.ApplicationOnboarding( model.Email, model.ApplicationName);
+            var result = await appLocaleRepository.ApplicationOnboarding(permissionData, model);
 
 
             return result;

@@ -96,7 +96,7 @@ namespace CAPPortal.Dal
             return 0;
         }
 
-        public async Task<int> ApplicationOnboarding(string UserId, string appName)
+        public async Task<int> ApplicationOnboarding(PermissionData permissionData, CreateUserApplicationModel model)
         {
             try
             {
@@ -105,9 +105,9 @@ namespace CAPPortal.Dal
 
                     using (var command = new SqlCommand("spOnboardApplication", connection) { CommandType = CommandType.StoredProcedure })
                     {
-                        command.Parameters.AddWithValue("@UserId", "00000000-0000-0000-0000-00007731eedc");
-                        command.Parameters.AddWithValue("@assignToUserId", "00000000-0000-0000-0000-00007731eedc");
-                        command.Parameters.AddWithValue("@ApplicationName", appName);
+                        command.Parameters.AddWithValue("@UserEmail", permissionData.UserEmail);
+                        command.Parameters.AddWithValue("@assignToUserEmail", model.Email);
+                        command.Parameters.AddWithValue("@ApplicationName", model.ApplicationName);
                         connection.Open();
                         var result = await command.ExecuteNonQueryAsync();
                         return result;

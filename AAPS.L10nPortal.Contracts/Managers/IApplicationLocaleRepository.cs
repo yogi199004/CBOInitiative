@@ -12,7 +12,7 @@ namespace CAPPortal.Contracts.Managers
         Task<int> ApplicationLocaleValueMergeAsync(PermissionData permissionData, int applicationLocaleId, IEnumerable<ApplicationLocaleValue> values);
         Task<int> ApplicationOriginalValueMergeAsync(PermissionData permissionData, int applicationLocaleId, IEnumerable<ResourceKeyValue> values);
         Task<int> DeleteApplicationLocaleAsync(PermissionData permissionData, int applicationLocaleId);
-        Task<int> ApplicationOnboarding(CreateUserApplicationModel model);
+        Task<int> ApplicationOnboarding(PermissionData permissionData,CreateUserApplicationModel model);
         Task<int> AddAppManagerAsync(PermissionData permissionData, int applicationLocaleId, string reassignToUserEmail);
 
 

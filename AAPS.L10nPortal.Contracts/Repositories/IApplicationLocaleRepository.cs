@@ -15,7 +15,7 @@ namespace CAPPortal.Contracts.Repositories
         int ApplicationLocaleValueMerge(PermissionData permissionData, int applicationLocaleId, IEnumerable<ApplicationLocaleValue> values);
         int ApplicationOriginalValueMerge(PermissionData permissionData, int applicationLocaleId, IEnumerable<ResourceKeyValue> values);
         int ApplicationLocaleDelete(PermissionData permissionData, int applicationLocaleId);
-        Task<int> ApplicationOnboarding( string UserId, string applicationName);
+        Task<int> ApplicationOnboarding(PermissionData permissionData, CreateUserApplicationModel model);
         int AddAppManagerAsync(PermissionData permissionData, int applicationLocaleId, Guid assignToUserId);
 
     }

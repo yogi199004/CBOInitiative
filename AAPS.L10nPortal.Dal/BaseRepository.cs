@@ -1,8 +1,8 @@
-﻿using AAPS.L10nPortal.Contracts.Services;
+﻿using CAPPortal.Contracts.Services;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace AAPS.L10nPortal.Dal
+namespace CAPPortal.Dal
 {
     public abstract class BaseRepository
     {

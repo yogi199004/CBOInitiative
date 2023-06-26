@@ -1,8 +1,8 @@
 ﻿using AAPS.L10nPortal.Contracts.Models;
-using AAPS.L10nPortal.Entities;
+using CAPPortal.Entities;
 using System.Text.RegularExpressions;
 
-namespace AAPS.L10nPortal.Bal.TranslationExchange
+namespace AAPS.CAPPortal.Bal.TranslationExchange
 {
     class TranslationExchangeTranslatedValidator : TranslationExchangeValidator
     {

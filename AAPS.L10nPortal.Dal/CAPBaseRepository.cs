@@ -1,6 +1,6 @@
-﻿using AAPS.L10nPortal.Contracts.Services;
+﻿using CAPPortal.Contracts.Services;
 
-namespace AAPS.L10nPortal.Dal
+namespace CAPPortal.Dal
 {
     public class CAPBaseRepository : BaseRepository
     {

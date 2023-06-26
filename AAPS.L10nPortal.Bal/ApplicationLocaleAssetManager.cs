@@ -1,13 +1,13 @@
-﻿using AAPS.L10nPortal.Bal.AzureBlob;
-using AAPS.L10nPortal.Bal.Exceptions;
-using AAPS.L10nPortal.Contracts.Managers;
-using AAPS.L10nPortal.Contracts.Models;
-using AAPS.L10nPortal.Contracts.Repositories;
-using AAPS.L10nPortal.Dal.Exceptions;
-using AAPS.L10nPortal.Entities;
+﻿using AAPS.CAPPortal.Bal.AzureBlob;
+using AAPS.CAPPortal.Bal.Exceptions;
+using CAPPortal.Contracts.Managers;
+using CAPPortal.Contracts.Models;
+using CAPPortal.Contracts.Repositories;
+using CAPPortal.Dal.Exceptions;
+using CAPPortal.Entities;
 using System.Text.RegularExpressions;
 
-namespace AAPS.L10nPortal.Bal
+namespace AAPS.CAPPortal.Bal
 {
     public class ApplicationLocaleAssetManager : IApplicationLocaleAssetManager
     {

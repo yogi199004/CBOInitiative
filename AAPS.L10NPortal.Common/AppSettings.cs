@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AAPS.L10NPortal.Common
+namespace CAPPortal.Common
 {
     public class AppSettings
     {

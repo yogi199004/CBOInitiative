@@ -1,7 +1,7 @@
-﻿using AAPS.L10nPortal.Entities;
+﻿using CAPPortal.Entities;
 using System.Security.Principal;
 
-namespace AAPS.L10nPortal.Contracts.Services
+namespace CAPPortal.Contracts.Services
 {
     public interface IPrincipalDataService
     {

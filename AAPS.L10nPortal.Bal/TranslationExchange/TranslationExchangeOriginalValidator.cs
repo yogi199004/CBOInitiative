@@ -1,6 +1,6 @@
 ﻿using AAPS.L10nPortal.Contracts.Models;
 
-namespace AAPS.L10nPortal.Bal.TranslationExchange
+namespace AAPS.CAPPortal.Bal.TranslationExchange
 {
     class TranslationExchangeOriginalValidator : TranslationExchangeValidator
     {

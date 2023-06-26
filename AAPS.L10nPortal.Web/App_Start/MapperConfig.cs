@@ -1,4 +1,4 @@
-﻿namespace AAPS.L10nPortal.Web
+﻿namespace CAPPortal.Web
 
 {
     public class MapperConfig

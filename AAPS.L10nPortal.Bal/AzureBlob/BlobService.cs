@@ -1,11 +1,11 @@
-﻿using AAPS.L10nPortal.Contracts.Models;
-using AAPS.L10nPortal.Secrets;
-using AAPS.L10NPortal.Common;
+﻿using CAPPortal.Contracts.Models;
+using CAPPortal.Secrets;
+using CAPPortal.Common;
 using Microsoft.Azure.Storage;
 using Microsoft.Azure.Storage.Blob;
 using Microsoft.Extensions.Configuration;
 
-namespace AAPS.L10nPortal.Bal.AzureBlob
+namespace AAPS.CAPPortal.Bal.AzureBlob
 {
     public static class BlobService
     {

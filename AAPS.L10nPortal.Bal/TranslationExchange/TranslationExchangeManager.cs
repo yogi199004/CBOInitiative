@@ -1,9 +1,9 @@
-﻿using AAPS.L10nPortal.Bal.Translation;
-using AAPS.L10nPortal.Contracts.Managers;
+﻿using AAPS.CAPPortal.Bal.Translation;
+using CAPPortal.Contracts.Managers;
 using AAPS.L10nPortal.Contracts.Models;
 using System.Text.RegularExpressions;
 
-namespace AAPS.L10nPortal.Bal.TranslationExchange
+namespace AAPS.CAPPortal.Bal.TranslationExchange
 {
     public class TranslationExchangeManager : ITranslationExchangeManager
     {

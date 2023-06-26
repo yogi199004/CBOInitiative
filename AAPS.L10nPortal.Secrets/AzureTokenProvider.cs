@@ -1,8 +1,8 @@
-﻿using AAPS.L10nPortal.Contracts.Providers;
+﻿using CAPPortal.Contracts.Providers;
 using Microsoft.Azure.Services.AppAuthentication;
 using Microsoft.Extensions.Configuration;
 
-namespace AAPS.L10nPortal.Secrets
+namespace CAPPortal.Secrets
 {
     public class AzureTokenProvider : IAzureTokenProvider
     {

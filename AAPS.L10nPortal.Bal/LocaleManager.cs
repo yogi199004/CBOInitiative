@@ -1,8 +1,8 @@
-﻿using AAPS.L10nPortal.Contracts.Managers;
-using AAPS.L10nPortal.Contracts.Repositories;
-using AAPS.L10nPortal.Entities;
+﻿using CAPPortal.Contracts.Managers;
+using CAPPortal.Contracts.Repositories;
+using CAPPortal.Entities;
 
-namespace AAPS.L10nPortal.Bal
+namespace AAPS.CAPPortal.Bal
 {
     public class LocaleManager : ILocaleManager
     {

@@ -1,7 +1,7 @@
 ﻿using System.Net.Mime;
 using System.Net;
-using AAPS.L10nPortal.Bal.Exceptions;
-using AAPS.L10nPortal.Dal.Exceptions;
+using AAPS.CAPPortal.Bal.Exceptions;
+using CAPPortal.Dal.Exceptions;
 using AAPS.L10nPortal.Batch.Model;
 
 namespace AAPS.L10nPortal.Batch.Handlers

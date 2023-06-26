@@ -1,4 +1,4 @@
-﻿namespace AAPS.L10nPortal.Entities.Attributes
+﻿namespace CAPPortal.Entities.Attributes
 {
     public class IntegerSqlColumn : SqlColumn
     {

@@ -1,11 +1,11 @@
-﻿using AAPS.L10nPortal.Contracts.Repositories;
-using AAPS.L10nPortal.Contracts.Services;
-using AAPS.L10nPortal.Entities;
+﻿using CAPPortal.Contracts.Repositories;
+using CAPPortal.Contracts.Services;
+using CAPPortal.Entities;
 using DbDataReaderMapper;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace AAPS.L10nPortal.Dal
+namespace CAPPortal.Dal
 {
     public class ApplicationLocaleRepository : CAPBaseRepository, IApplicationLocaleRepository
     {

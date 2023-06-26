@@ -1,4 +1,4 @@
-﻿namespace AAPS.L10nPortal.Contracts.Managers
+﻿namespace CAPPortal.Contracts.Managers
 {
     public interface ITranslationExchangeManager
     {

@@ -1,4 +1,4 @@
-﻿namespace AAPS.L10nPortal.Contracts.Attributes
+﻿namespace CAPPortal.Contracts.Attributes
 {
     [AttributeUsage(AttributeTargets.Property)]
     public class ExcelColumnAttribute : Attribute

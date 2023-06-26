@@ -1,10 +1,10 @@
-﻿using AAPS.L10nPortal.Contracts.Managers;
-using AAPS.L10nPortal.Contracts.Models;
-using AAPS.L10nPortal.Contracts.Services;
-using AAPS.L10nPortal.Entities;
+﻿using CAPPortal.Contracts.Managers;
+using CAPPortal.Contracts.Models;
+using CAPPortal.Contracts.Services;
+using CAPPortal.Entities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AAPS.L10nPortal.Web.Controllers.WebApi
+namespace CAPPortal.Web.Controllers.WebApi
 {
     [Route("api/Filter")]
     public class FilterController : BaseApiController

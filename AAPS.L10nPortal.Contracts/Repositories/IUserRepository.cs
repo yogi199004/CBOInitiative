@@ -1,7 +1,7 @@
-﻿using AAPS.L10nPortal.Entities;
+﻿using CAPPortal.Entities;
 using System.Collections.Generic;
 
-namespace AAPS.L10nPortal.Contracts.Repositories
+namespace CAPPortal.Contracts.Repositories
 {
     public interface IUserRepository
     {

@@ -1,4 +1,4 @@
-using AAPS.L10NPortal.Common;
+using CAPPortal.Common;
 using Hangfire;
 using Hangfire.SqlServer;
 using Serilog;

@@ -1,10 +1,10 @@
-﻿using AAPS.L10nPortal.Contracts.Providers;
-using AAPS.L10NPortal.Common;
+﻿using CAPPortal.Contracts.Providers;
+using CAPPortal.Common;
 using Microsoft.Azure.KeyVault;
 using Microsoft.Azure.Services.AppAuthentication;
 using Microsoft.Extensions.Configuration;
 
-namespace AAPS.L10nPortal.Secrets
+namespace CAPPortal.Secrets
 {
     public class AzureKeyVaultDataProvider : IAzureKeyVaultDataProvider
     {

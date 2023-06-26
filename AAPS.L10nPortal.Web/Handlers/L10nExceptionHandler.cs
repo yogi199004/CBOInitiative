@@ -1,6 +1,6 @@
-﻿namespace AAPS.L10nPortal.Web.Handlers
+﻿namespace CAPPortal.Web.Handlers
 {
-    public class L10nExceptionHandler
+    public class CAPExceptionHandler
     {
 
     }

@@ -3,7 +3,7 @@ using System.Net.Http.Headers;
 using System.Text;
 
 
-namespace AAPS.L10nPortal.Dal
+namespace CAPPortal.Dal
 {
     public abstract class AzureApiDataProviderBase
     {

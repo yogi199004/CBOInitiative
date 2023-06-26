@@ -1,4 +1,4 @@
-﻿using AAPS.L10nPortal.Contracts.Attributes;
+﻿using CAPPortal.Contracts.Attributes;
 
 namespace AAPS.L10nPortal.Contracts.Models
 {

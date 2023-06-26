@@ -2,7 +2,7 @@
 using System.Net;
 using System.Net.Http.Headers;
 
-namespace AAPS.L10nPortal.Web.Extension
+namespace CAPPortal.Web.Extension
 {
     public static class HttpRequestExtensions
     {

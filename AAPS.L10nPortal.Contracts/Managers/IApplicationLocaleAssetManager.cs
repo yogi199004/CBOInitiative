@@ -1,7 +1,7 @@
-﻿using AAPS.L10nPortal.Contracts.Models;
-using AAPS.L10nPortal.Entities;
+﻿using CAPPortal.Contracts.Models;
+using CAPPortal.Entities;
 
-namespace AAPS.L10nPortal.Contracts.Managers
+namespace CAPPortal.Contracts.Managers
 {
     public interface IApplicationLocaleAssetManager
     {

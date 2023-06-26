@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AAPS.L10nPortal.Entities
+namespace CAPPortal.Entities
 {
     public class LocaleJsonResponse
     {

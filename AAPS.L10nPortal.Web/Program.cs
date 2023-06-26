@@ -1,17 +1,17 @@
-using AAPS.L10nPortal.Bal;
-using AAPS.L10nPortal.Bal.AzureBlob;
-using AAPS.L10nPortal.Bal.Services;
-using AAPS.L10nPortal.Bal.Translation;
-using AAPS.L10nPortal.Bal.TranslationExchange;
-using AAPS.L10nPortal.Contracts.Managers;
-using AAPS.L10nPortal.Contracts.Providers;
-using AAPS.L10nPortal.Contracts.Repositories;
-using AAPS.L10nPortal.Contracts.Services;
-using AAPS.L10nPortal.Dal;
-using AAPS.L10nPortal.Secrets;
-using AAPS.L10nPortal.Web.Handlers;
-using AAPS.L10NPortal.Common;
-using AAPS.L10NPortal.Common.Services;
+using AAPS.CAPPortal.Bal;
+using AAPS.CAPPortal.Bal.AzureBlob;
+using AAPS.CAPPortal.Bal.Services;
+using AAPS.CAPPortal.Bal.Translation;
+using AAPS.CAPPortal.Bal.TranslationExchange;
+using CAPPortal.Contracts.Managers;
+using CAPPortal.Contracts.Providers;
+using CAPPortal.Contracts.Repositories;
+using CAPPortal.Contracts.Services;
+using CAPPortal.Dal;
+using CAPPortal.Secrets;
+using CAPPortal.Web.Handlers;
+using CAPPortal.Common;
+using CAPPortal.Common.Services;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authorization;
@@ -21,6 +21,7 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.UI;
 using Serilog;
+
 
 var builder = WebApplication.CreateBuilder(args);
 var configValue = builder.Configuration.GetSection("AppSettings").Get<AppSettings>();
@@ -154,5 +155,5 @@ app.MapControllerRoute(
     name: "default",
    pattern: "{controller=Home}/{action=Index}/{id?}");
 
-AAPS.L10nPortal.Web.MapperConfig.RegisterMaps();
+CAPPortal.Web.MapperConfig.RegisterMaps();
 app.Run();

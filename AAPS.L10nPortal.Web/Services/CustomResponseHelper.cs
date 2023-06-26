@@ -2,7 +2,7 @@
 using System.Net;
 using System.Net.Http.Headers;
 
-namespace AAPS.L10nPortal.Web.Services
+namespace CAPPortal.Web.Services
 {
     internal static class CustomResponseHelper
     {

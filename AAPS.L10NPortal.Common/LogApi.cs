@@ -1,7 +1,7 @@
 ﻿using Serilog;
 using System.Diagnostics;
 
-namespace AAPS.L10NPortal.Common
+namespace CAPPortal.Common
 {
     public sealed class LogApi
     {

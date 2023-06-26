@@ -1,4 +1,4 @@
-﻿namespace AAPS.L10nPortal.Dal.Exceptions
+﻿namespace CAPPortal.Dal.Exceptions
 {
     [Serializable]
     public class ApplicationAlreadyOnboardedException : CustomSqlException

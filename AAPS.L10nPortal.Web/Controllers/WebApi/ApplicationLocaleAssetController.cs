@@ -1,14 +1,14 @@
-﻿using AAPS.L10nPortal.Bal.Exceptions;
-using AAPS.L10nPortal.Bal.Extensions;
-using AAPS.L10nPortal.Contracts.Managers;
-using AAPS.L10nPortal.Contracts.Models;
-using AAPS.L10nPortal.Contracts.Services;
+﻿using AAPS.CAPPortal.Bal.Exceptions;
+using AAPS.CAPPortal.Bal.Extensions;
+using CAPPortal.Contracts.Managers;
+using CAPPortal.Contracts.Models;
+using CAPPortal.Contracts.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.StaticFiles;
 
 
-namespace AAPS.L10nPortal.Web.Controllers.WebApi
+namespace CAPPortal.Web.Controllers.WebApi
 {  
     [Route("api/ApplicationLocaleAsset")]
     public class ApplicationLocaleAssetController : BaseApiController

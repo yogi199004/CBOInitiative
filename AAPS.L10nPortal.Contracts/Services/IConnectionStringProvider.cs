@@ -1,4 +1,4 @@
-﻿namespace AAPS.L10nPortal.Contracts.Services
+﻿namespace CAPPortal.Contracts.Services
 {
     public interface IConnectionStringProvider
     {

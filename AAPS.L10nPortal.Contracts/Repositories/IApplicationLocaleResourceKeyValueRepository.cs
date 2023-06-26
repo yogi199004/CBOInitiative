@@ -1,6 +1,6 @@
-﻿using AAPS.L10nPortal.Entities;
+﻿using CAPPortal.Entities;
 
-namespace AAPS.L10nPortal.Contracts.Repositories
+namespace CAPPortal.Contracts.Repositories
 {
     public interface IApplicationLocaleResourceKeyValueRepository
     {

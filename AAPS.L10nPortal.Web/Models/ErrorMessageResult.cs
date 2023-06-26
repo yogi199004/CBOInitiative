@@ -1,4 +1,4 @@
-﻿namespace AAPS.L10nPortal.Web.Models
+﻿namespace CAPPortal.Web.Models
 {
     public class ErrorMessageResult
     {

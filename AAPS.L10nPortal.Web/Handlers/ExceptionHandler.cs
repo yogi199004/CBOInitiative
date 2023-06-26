@@ -1,10 +1,10 @@
-﻿using AAPS.L10nPortal.Bal.Exceptions;
-using AAPS.L10nPortal.Dal.Exceptions;
-using AAPS.L10nPortal.Web.Models;
+﻿using AAPS.CAPPortal.Bal.Exceptions;
+using CAPPortal.Dal.Exceptions;
+using CAPPortal.Web.Models;
 using System.Net;
 using System.Net.Mime;
 
-namespace AAPS.L10nPortal.Web.Handlers
+namespace CAPPortal.Web.Handlers
 {
     public class ExceptionHandler
     {

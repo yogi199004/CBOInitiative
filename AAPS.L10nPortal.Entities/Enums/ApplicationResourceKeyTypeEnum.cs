@@ -1,4 +1,4 @@
-﻿namespace AAPS.L10nPortal.Entities.Enums
+﻿namespace CAPPortal.Entities.Enums
 {
     public enum ApplicationResourceKeyTypeEnum
     {

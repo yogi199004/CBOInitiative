@@ -1,6 +1,6 @@
-﻿using AAPS.L10nPortal.Entities.Attributes;
+﻿using CAPPortal.Entities.Attributes;
 
-namespace AAPS.L10nPortal.Dal
+namespace CAPPortal.Dal
 {
     using System;
     using System.Collections.Generic;

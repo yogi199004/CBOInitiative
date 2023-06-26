@@ -1,10 +1,10 @@
-﻿using AAPS.L10nPortal.Bal.Exceptions;
-using AAPS.L10nPortal.Contracts.Services;
-using AAPS.L10nPortal.Entities;
+﻿using AAPS.CAPPortal.Bal.Exceptions;
+using CAPPortal.Contracts.Services;
+using CAPPortal.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AAPS.L10nPortal.Web.Controllers.WebApi
+namespace CAPPortal.Web.Controllers.WebApi
 {
     [Authorize]
     //[ApiController]

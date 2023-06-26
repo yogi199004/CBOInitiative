@@ -1,10 +1,10 @@
-﻿using AAPS.L10nPortal.Contracts.Providers;
-using AAPS.L10nPortal.Entities;
-using AAPS.L10nPortal.Secrets;
-using AAPS.L10NPortal.Common;
+﻿using CAPPortal.Contracts.Providers;
+using CAPPortal.Entities;
+using CAPPortal.Secrets;
+using CAPPortal.Common;
 using Microsoft.Extensions.Configuration;
 
-namespace AAPS.L10nPortal.Dal
+namespace CAPPortal.Dal
 {
     public class OpmDataProvider : AzureApiDataProviderBase, IOpmDataProvider
     {

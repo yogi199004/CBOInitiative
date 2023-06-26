@@ -1,8 +1,8 @@
-﻿using AAPS.L10nPortal.Contracts.Services;
+﻿using CAPPortal.Contracts.Services;
 using Microsoft.Extensions.Configuration;
 using System.Configuration;
 
-namespace AAPS.L10NPortal.Common.Services
+namespace CAPPortal.Common.Services
 {
     public class AppConfigConnectionStringProvider : IConnectionStringProvider
     {

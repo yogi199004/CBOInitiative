@@ -1,4 +1,4 @@
-﻿namespace AAPS.L10nPortal.Dal
+﻿namespace CAPPortal.Dal
 {
     public static class MapperConfig
     {

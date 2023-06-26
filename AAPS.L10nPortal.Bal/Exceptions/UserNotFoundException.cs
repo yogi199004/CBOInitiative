@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace AAPS.L10nPortal.Bal.Exceptions
+namespace AAPS.CAPPortal.Bal.Exceptions
 {
     [Serializable]
     public class UserNotFoundException : CustomHttpException

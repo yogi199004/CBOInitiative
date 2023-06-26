@@ -1,4 +1,4 @@
-﻿namespace AAPS.L10NPortal.Common
+﻿namespace CAPPortal.Common
 {
     public class LocalizationMetadata
     {

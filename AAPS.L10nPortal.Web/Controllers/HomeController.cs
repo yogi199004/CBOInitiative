@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 
 
-namespace AAPS.L10nPortal.Web.Controllers
+namespace CAPPortal.Web.Controllers
 {
     [Authorize]
     //[AllowAnonymous]

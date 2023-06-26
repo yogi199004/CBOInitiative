@@ -1,4 +1,4 @@
-﻿namespace AAPS.L10nPortal.Bal.Translation
+﻿namespace AAPS.CAPPortal.Bal.Translation
 {
     public class TranslationResponse
     {

@@ -1,7 +1,7 @@
-﻿using AAPS.L10nPortal.Dal.Exceptions;
+﻿using CAPPortal.Dal.Exceptions;
 using System.Data.SqlClient;
 
-namespace AAPS.L10nPortal.Dal
+namespace CAPPortal.Dal
 {
     public static class DataAccessExceptionHelper
     {

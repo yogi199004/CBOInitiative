@@ -1,6 +1,6 @@
-﻿using AAPS.L10nPortal.Entities;
+﻿using CAPPortal.Entities;
 
-namespace AAPS.L10nPortal.Contracts.Providers
+namespace CAPPortal.Contracts.Providers
 {
     public interface IOpmDataProvider
     {

@@ -1,4 +1,4 @@
-﻿namespace AAPS.L10nPortal.Contracts.Models
+﻿namespace CAPPortal.Contracts.Models
 {
     public class Asset
     {

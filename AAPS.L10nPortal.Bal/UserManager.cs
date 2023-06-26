@@ -1,11 +1,11 @@
-﻿using AAPS.L10nPortal.Bal.Exceptions;
-using AAPS.L10nPortal.Contracts.Managers;
-using AAPS.L10nPortal.Contracts.Providers;
-using AAPS.L10nPortal.Contracts.Repositories;
-using AAPS.L10nPortal.Contracts.Services;
-using AAPS.L10nPortal.Entities;
+﻿using AAPS.CAPPortal.Bal.Exceptions;
+using CAPPortal.Contracts.Managers;
+using CAPPortal.Contracts.Providers;
+using CAPPortal.Contracts.Repositories;
+using CAPPortal.Contracts.Services;
+using CAPPortal.Entities;
 
-namespace AAPS.L10nPortal.Bal
+namespace AAPS.CAPPortal.Bal
 {
     public class UserManager : IUserManager
     {

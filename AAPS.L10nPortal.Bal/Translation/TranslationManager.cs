@@ -1,14 +1,14 @@
 ﻿using AAPS.L10nPortal.Contracts.Models;
-using AAPS.L10nPortal.Contracts.Providers;
-using AAPS.L10nPortal.Entities;
-using AAPS.L10nPortal.Entities.Enums;
-using AAPS.L10NPortal.Common;
+using CAPPortal.Contracts.Providers;
+using CAPPortal.Entities;
+using CAPPortal.Entities.Enums;
+using CAPPortal.Common;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace AAPS.L10nPortal.Bal.Translation
+namespace AAPS.CAPPortal.Bal.Translation
 {
     public class TranslationManager : ITranslationManager
     {

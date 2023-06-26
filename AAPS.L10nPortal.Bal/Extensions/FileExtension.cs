@@ -1,4 +1,4 @@
-﻿namespace AAPS.L10nPortal.Bal.Extensions
+﻿namespace AAPS.CAPPortal.Bal.Extensions
 {
     public static class FileExtension
     {

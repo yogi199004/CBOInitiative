@@ -1,4 +1,4 @@
-﻿namespace AAPS.L10nPortal.Entities
+﻿namespace CAPPortal.Entities
 {
     public class Updatable
     {

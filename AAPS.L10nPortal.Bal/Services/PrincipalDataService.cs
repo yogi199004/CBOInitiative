@@ -1,9 +1,9 @@
-﻿using AAPS.L10nPortal.Contracts.Services;
-using AAPS.L10nPortal.Entities;
+﻿using CAPPortal.Contracts.Services;
+using CAPPortal.Entities;
 using System.Security.Claims;
 using System.Security.Principal;
 
-namespace AAPS.L10nPortal.Bal.Services
+namespace AAPS.CAPPortal.Bal.Services
 {
     public class PrincipalDataService : IPrincipalDataService
     {

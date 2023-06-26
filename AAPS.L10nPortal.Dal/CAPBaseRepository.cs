@@ -2,9 +2,9 @@
 
 namespace AAPS.L10nPortal.Dal
 {
-    public class L10nBaseRepository : BaseRepository
+    public class CAPBaseRepository : BaseRepository
     {
-        public L10nBaseRepository(IConnectionStringProvider connectionStringProvider) : base(connectionStringProvider, "CAPPortal", "CAPServerPassword")
+        public CAPBaseRepository(IConnectionStringProvider connectionStringProvider) : base(connectionStringProvider, "CAPPortal", "CAPServerPassword")
         {
 
         }

@@ -23,17 +23,8 @@
      
     </th>
 
-    <th>
-      <a href="#" class="link-txt" role="button" id="dropdownMenuLink" data-toggle="dropdown">Locale (Language-Country)
-        
-      </a>
-
-     
-    </th>
  
-    <th>
-      <span>Upload / Download</span>
-    </th>
+ 
     <th></th>
     <th></th>
     <th>
@@ -43,15 +34,8 @@
   <tr *ngFor="let locale of locales; let i = index">
     <td>{{locale.ApplicationName}}</td>
     <td>{{locale.UserEmail}}</td>
-    <td>{{locale.LocaleCode}}<br />{{locale.EnglishName}}</td>
+   
 
-    <td>
-      <div *ngIf="locale.CanEdit">
-        <input type="file" id="file-input-{{i}}" class="file-input" (change)="uploadLocale($event, locale)" />
-        <button (click)="browseFile('file-input-', i)" class="img-button upload-arrow"></button>
-        <button class="img-button download-arrow" (click)="downloadLocale(locale)"></button>
-      </div>
-    </td>
     <!--<td>
       <div class="d-flex align-items-start">
         <div class="img-button edit-button"

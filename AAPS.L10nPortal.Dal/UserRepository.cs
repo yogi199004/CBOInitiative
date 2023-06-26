@@ -7,7 +7,7 @@ using DbDataReaderMapper;
 
 namespace AAPS.L10nPortal.Dal
 {
-    public class UserRepository : L10nBaseRepository, IUserRepository
+    public class UserRepository : CAPBaseRepository, IUserRepository
     {
 
         public UserRepository(IConnectionStringProvider connectionStringProvider) : base(connectionStringProvider)

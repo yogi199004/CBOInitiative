@@ -15,9 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AAPS.L10NPortal.Common\AAPS.L10NPortal.Common.csproj" />
-    <ProjectReference Include="..\AAPS.L10nPortal.Contracts\AAPS.L10nPortal.Contracts.csproj" />
-    <ProjectReference Include="..\AAPS.L10nPortal.Secrets\AAPS.L10nPortal.Secrets.csproj" />
+    <ProjectReference Include="..\AAPS.L10NPortal.Common\CAPPortal.Common.csproj" />
+    <ProjectReference Include="..\AAPS.L10nPortal.Contracts\CAPPortal.Contracts.csproj" />
+    <ProjectReference Include="..\AAPS.L10nPortal.Secrets\CAPPortal.Secrets.csproj" />
   </ItemGroup>
 
 </Project>

@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace AAPS.L10nPortal.Dal
 {
-    public class ApplicationLocaleRepository : L10nBaseRepository, IApplicationLocaleRepository
+    public class ApplicationLocaleRepository : CAPBaseRepository, IApplicationLocaleRepository
     {
 
         public ApplicationLocaleRepository(IConnectionStringProvider connectionStringProvider) : base(connectionStringProvider)

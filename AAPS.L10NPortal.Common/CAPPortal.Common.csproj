@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AAPS.L10nPortal.Contracts\AAPS.L10nPortal.Contracts.csproj" />
+    <ProjectReference Include="..\AAPS.L10nPortal.Contracts\CAPPortal.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

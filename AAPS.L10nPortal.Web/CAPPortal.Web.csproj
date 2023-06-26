@@ -48,9 +48,9 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\AAPS.L10nPortal.Bal\AAPS.L10nPortal.Bal.csproj" />
-    <ProjectReference Include="..\AAPS.L10nPortal.Contracts\AAPS.L10nPortal.Contracts.csproj" />
-    <ProjectReference Include="..\AAPS.L10nPortal.Dal\AAPS.L10nPortal.Dal.csproj" />
+    <ProjectReference Include="..\AAPS.L10nPortal.Bal\CAPPortal.Bal.csproj" />
+    <ProjectReference Include="..\AAPS.L10nPortal.Contracts\CAPPortal.Contracts.csproj" />
+    <ProjectReference Include="..\AAPS.L10nPortal.Dal\CAPPortal.Dal.csproj" />
   </ItemGroup>
 
 

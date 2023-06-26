@@ -109,7 +109,7 @@ namespace AAPS.L10nPortal.Bal
             if (retriveFromJson)
             {
                 var locales = Enumerable.Empty<UserApplicationLocale>();
-                var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, L10nConstants.LocalesFilePath);
+                var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, CAPConstants.LocalesFilePath);
                 JObject objData = JObject.Parse(File.ReadAllText(filePath));
                 locales = objData.ToObject<LocaleJsonResponse>().Locales;
                 return locales;

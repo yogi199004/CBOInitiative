@@ -5,7 +5,7 @@ using AAPS.L10nPortal.Entities;
 
 namespace AAPS.L10nPortal.Dal
 {
-    public class LocaleRepository : L10nBaseRepository, ILocaleRepository
+    public class LocaleRepository : CAPBaseRepository, ILocaleRepository
     {
         public LocaleRepository(IConnectionStringProvider connectionStringProvider) : base(connectionStringProvider)
         {

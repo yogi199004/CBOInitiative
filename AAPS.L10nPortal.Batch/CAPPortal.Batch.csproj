@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -15,9 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AAPS.L10nPortal.Bal\AAPS.L10nPortal.Bal.csproj" />
-    <ProjectReference Include="..\AAPS.L10NPortal.Common\AAPS.L10NPortal.Common.csproj" />
-    <ProjectReference Include="..\AAPS.L10nPortal.Dal\AAPS.L10nPortal.Dal.csproj" />
+    <ProjectReference Include="..\AAPS.L10nPortal.Bal\CAPPortal.Bal.csproj" />
+    <ProjectReference Include="..\AAPS.L10NPortal.Common\CAPPortal.Common.csproj" />
+    <ProjectReference Include="..\AAPS.L10nPortal.Dal\CAPPortal.Dal.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 ﻿using CAPPortal.Entities;
 
-namespace AAPS.CAPPortal.Bal.TranslationExchange
+namespace CAPPortal.Bal.TranslationExchange
 {
     public class TranslationExchangeValidator
     {

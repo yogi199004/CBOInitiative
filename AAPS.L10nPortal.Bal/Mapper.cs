@@ -1,4 +1,4 @@
-﻿namespace AAPS.CAPPortal.Bal
+﻿namespace CAPPortal.Bal
 {
     public sealed class Mapper
     {

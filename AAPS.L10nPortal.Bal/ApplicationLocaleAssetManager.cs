@@ -1,5 +1,5 @@
-﻿using AAPS.CAPPortal.Bal.AzureBlob;
-using AAPS.CAPPortal.Bal.Exceptions;
+﻿using CAPPortal.Bal.AzureBlob;
+using CAPPortal.Bal.Exceptions;
 using CAPPortal.Contracts.Managers;
 using CAPPortal.Contracts.Models;
 using CAPPortal.Contracts.Repositories;
@@ -7,7 +7,7 @@ using CAPPortal.Dal.Exceptions;
 using CAPPortal.Entities;
 using System.Text.RegularExpressions;
 
-namespace AAPS.CAPPortal.Bal
+namespace CAPPortal.Bal
 {
     public class ApplicationLocaleAssetManager : IApplicationLocaleAssetManager
     {

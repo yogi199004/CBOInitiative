@@ -2,7 +2,7 @@
 using CAPPortal.Entities;
 using System.Text.RegularExpressions;
 
-namespace AAPS.CAPPortal.Bal.TranslationExchange
+namespace CAPPortal.Bal.TranslationExchange
 {
     class TranslationExchangeTranslatedValidator : TranslationExchangeValidator
     {

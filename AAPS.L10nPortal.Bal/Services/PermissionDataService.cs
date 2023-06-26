@@ -4,7 +4,7 @@ using CAPPortal.Entities;
 using System.Runtime.ExceptionServices;
 using System.Security.Principal;
 
-namespace AAPS.CAPPortal.Bal.Services
+namespace CAPPortal.Bal.Services
 {
     public class PermissionDataService : IPermissionDataService
     {

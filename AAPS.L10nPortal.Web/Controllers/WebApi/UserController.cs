@@ -1,4 +1,4 @@
-﻿using AAPS.CAPPortal.Bal.Exceptions;
+﻿using CAPPortal.Bal.Exceptions;
 using CAPPortal.Contracts.Managers;
 using CAPPortal.Contracts.Services;
 using CAPPortal.Entities;

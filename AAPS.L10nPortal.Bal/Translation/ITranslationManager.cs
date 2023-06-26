@@ -1,7 +1,7 @@
 ﻿using AAPS.L10nPortal.Contracts.Models;
 using CAPPortal.Entities;
 
-namespace AAPS.CAPPortal.Bal.Translation
+namespace CAPPortal.Bal.Translation
 {
     public interface ITranslationManager
     {

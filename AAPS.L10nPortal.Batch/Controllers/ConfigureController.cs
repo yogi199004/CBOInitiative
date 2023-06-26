@@ -1,11 +1,11 @@
-﻿using AAPS.L10nPortal.Batch.Model;
+﻿using CAPPortal.Batch.Model;
 using CAPPortal.Common;
 using Hangfire;
 using Hangfire.Server;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
-namespace AAPS.L10nPortal.Batch.Controllers
+namespace CAPPortal.Batch.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

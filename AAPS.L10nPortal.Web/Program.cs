@@ -1,8 +1,8 @@
-using AAPS.CAPPortal.Bal;
-using AAPS.CAPPortal.Bal.AzureBlob;
-using AAPS.CAPPortal.Bal.Services;
-using AAPS.CAPPortal.Bal.Translation;
-using AAPS.CAPPortal.Bal.TranslationExchange;
+using CAPPortal.Bal;
+using CAPPortal.Bal.AzureBlob;
+using CAPPortal.Bal.Services;
+using CAPPortal.Bal.Translation;
+using CAPPortal.Bal.TranslationExchange;
 using CAPPortal.Contracts.Managers;
 using CAPPortal.Contracts.Providers;
 using CAPPortal.Contracts.Repositories;

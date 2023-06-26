@@ -1,4 +1,4 @@
-﻿namespace AAPS.L10nPortal.Batch.Model
+﻿namespace CAPPortal.Batch.Model
 {
     public class CronMapping
     {

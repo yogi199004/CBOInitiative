@@ -1,4 +1,4 @@
-﻿namespace AAPS.CAPPortal.Bal.Exceptions
+﻿namespace CAPPortal.Bal.Exceptions
 {
     [Serializable]
     public class ExcelCorruptedException : Exception

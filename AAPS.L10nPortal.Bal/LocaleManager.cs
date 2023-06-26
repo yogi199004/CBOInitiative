@@ -2,7 +2,7 @@
 using CAPPortal.Contracts.Repositories;
 using CAPPortal.Entities;
 
-namespace AAPS.CAPPortal.Bal
+namespace CAPPortal.Bal
 {
     public class LocaleManager : ILocaleManager
     {

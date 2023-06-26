@@ -1,4 +1,4 @@
-﻿using AAPS.CAPPortal.Bal.Exceptions;
+﻿using CAPPortal.Bal.Exceptions;
 using CAPPortal.Dal.Exceptions;
 using CAPPortal.Web.Models;
 using System.Net;

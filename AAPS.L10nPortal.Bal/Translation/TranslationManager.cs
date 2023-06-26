@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace AAPS.CAPPortal.Bal.Translation
+namespace CAPPortal.Bal.Translation
 {
     public class TranslationManager : ITranslationManager
     {

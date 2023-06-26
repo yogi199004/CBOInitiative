@@ -1,10 +1,10 @@
 ﻿using System.Net.Mime;
 using System.Net;
-using AAPS.CAPPortal.Bal.Exceptions;
+using CAPPortal.Bal.Exceptions;
 using CAPPortal.Dal.Exceptions;
-using AAPS.L10nPortal.Batch.Model;
+using CAPPortal.Batch.Model;
 
-namespace AAPS.L10nPortal.Batch.Handlers
+namespace CAPPortal.Batch.Handlers
 {
     public class ExceptionHandler
     {

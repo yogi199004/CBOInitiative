@@ -1,7 +1,7 @@
 ﻿using CAPPortal.Contracts.Attributes;
 using AAPS.L10nPortal.Contracts.Models;
 
-namespace AAPS.CAPPortal.Bal.TranslationExchange
+namespace CAPPortal.Bal.TranslationExchange
 {
     public class TranslationExchangeHelper
     {

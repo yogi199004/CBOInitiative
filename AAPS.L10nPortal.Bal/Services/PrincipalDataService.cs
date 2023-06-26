@@ -3,7 +3,7 @@ using CAPPortal.Entities;
 using System.Security.Claims;
 using System.Security.Principal;
 
-namespace AAPS.CAPPortal.Bal.Services
+namespace CAPPortal.Bal.Services
 {
     public class PrincipalDataService : IPrincipalDataService
     {

@@ -1,4 +1,4 @@
-﻿using AAPS.CAPPortal.Bal.Exceptions;
+﻿using CAPPortal.Bal.Exceptions;
 using CAPPortal.Contracts.Managers;
 using CAPPortal.Contracts.Repositories;
 using CAPPortal.Entities;
@@ -6,7 +6,7 @@ using CAPPortal.Common;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 
-namespace AAPS.CAPPortal.Bal
+namespace CAPPortal.Bal
 {
     public class ApplicationLocaleManager : IApplicationLocaleManager
     {

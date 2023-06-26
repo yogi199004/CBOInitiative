@@ -5,7 +5,7 @@ using Microsoft.Azure.Storage;
 using Microsoft.Azure.Storage.Blob;
 using Microsoft.Extensions.Configuration;
 
-namespace AAPS.CAPPortal.Bal.AzureBlob
+namespace CAPPortal.Bal.AzureBlob
 {
     public static class BlobService
     {

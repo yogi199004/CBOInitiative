@@ -1,11 +1,11 @@
-﻿using AAPS.CAPPortal.Bal.Exceptions;
+﻿using CAPPortal.Bal.Exceptions;
 using CAPPortal.Contracts.Managers;
 using CAPPortal.Contracts.Providers;
 using CAPPortal.Contracts.Repositories;
 using CAPPortal.Contracts.Services;
 using CAPPortal.Entities;
 
-namespace AAPS.CAPPortal.Bal
+namespace CAPPortal.Bal
 {
     public class UserManager : IUserManager
     {

@@ -1,5 +1,5 @@
-﻿using AAPS.CAPPortal.Bal.Exceptions;
-using AAPS.CAPPortal.Bal.Extensions;
+﻿using CAPPortal.Bal.Exceptions;
+using CAPPortal.Bal.Extensions;
 using CAPPortal.Contracts.Managers;
 using CAPPortal.Contracts.Models;
 using CAPPortal.Contracts.Services;

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>AAPS.L10nPortal.Database.Schema</Name>
+    <Name>CAPPortal.Database.Schema</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{1b9ae975-2cf7-4e81-acf3-fe6821ebfbc2}</ProjectGuid>

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AAPS.L10nPortal.Database.Schema", "AAPS.L10nPortal.Database.Schema\AAPS.L10nPortal.Database.Schema.sqlproj", "{1B9AE975-2CF7-4E81-ACF3-FE6821EBFBC2}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CAPPortal.Database.Schema", "AAPS.L10nPortal.Database.Schema\CAPPortal.Database.Schema.sqlproj", "{1B9AE975-2CF7-4E81-ACF3-FE6821EBFBC2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{D17B3CB5-58D2-40E4-969E-DF8A2FD94E62}"
 EndProject

@@ -23,20 +23,15 @@ namespace CAPPortal.Bal
         {
             return Regex.Replace(input, "[0-9]+", match => match.Value.PadLeft(10, '0'));
         }
-        public async Task<ApplicationAssets> GetListAsync( int applicationLocaleId)
+        public async Task<IEnumerable<Asset>> GetListAsync(PermissionData permissionData, int applicationLocaleId)
         {
+      
             try
             {
-                var applicationLocale =
-                    (await applicationLocaleRepository.GetUserApplicationLocaleById( applicationLocaleId))
-                    .FirstOrDefault();
-
-                return new ApplicationAssets
-                {
-                    ApplicationName = applicationLocale.ApplicationName,
-                    LocaleCode = applicationLocale.LocaleCode,
-                    Assets = null//(await applicationLocaleAssetRepository.GetList(applicationLocaleId)).Select(x => x.MapTo<Asset>()).OrderBy(x => PadNumbers(x.Key))
-                };
+                IEnumerable<Asset> lstAsset = new List<Asset>();
+                
+                 lstAsset = await applicationLocaleAssetRepository.GetList(permissionData, applicationLocaleId);
+                return lstAsset;
             }
             catch (PermissionException)
             {
@@ -49,7 +44,7 @@ namespace CAPPortal.Bal
             try
             {
                 var applicationLocale =
-                    (await applicationLocaleRepository.GetUserApplicationLocaleById(applicationLocaleId))
+                    (await applicationLocaleRepository.GetUserApplicationLocaleById(permissionData,applicationLocaleId))
                     .FirstOrDefault();
 
                 return new ApplicationAssets
@@ -70,7 +65,7 @@ namespace CAPPortal.Bal
             try
             {
                 var applicationLocale =
-                    (await applicationLocaleRepository.GetUserApplicationLocaleById( applicationLocaleId))
+                    (await applicationLocaleRepository.GetUserApplicationLocaleById(permissionData,applicationLocaleId))
                     .FirstOrDefault();
 
                 var asset = "test";
@@ -103,7 +98,7 @@ namespace CAPPortal.Bal
             try
             {
                 var applicationLocale =
-                    (await applicationLocaleRepository.GetUserApplicationLocaleById(applicationLocaleId))
+                    (await applicationLocaleRepository.GetUserApplicationLocaleById(permissionData,applicationLocaleId))
                     .FirstOrDefault();
 
                 var asset = "test";

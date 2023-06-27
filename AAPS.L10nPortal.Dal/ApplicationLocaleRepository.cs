@@ -54,7 +54,7 @@ namespace CAPPortal.Dal
         {
             return new List<ApplicationLocaleValue>();
         }
-        public async Task<IEnumerable<UserApplicationLocale>> GetUserApplicationLocaleById( int applicationLocaleId)
+        public async Task<IEnumerable<UserApplicationLocale>> GetUserApplicationLocaleById( PermissionData permissionData,int applicationLocaleId)
         {
             List<UserApplicationLocale> userApplicationLocaleList = new List<UserApplicationLocale>();
             using (var connection = await CreateSqlConnection())

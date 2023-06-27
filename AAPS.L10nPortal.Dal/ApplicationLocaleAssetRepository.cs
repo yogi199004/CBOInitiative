@@ -1,4 +1,5 @@
-﻿using CAPPortal.Contracts.Repositories;
+﻿using CAPPortal.Contracts.Models;
+using CAPPortal.Contracts.Repositories;
 using CAPPortal.Contracts.Services;
 using CAPPortal.Entities;
 using DbDataReaderMapper;
@@ -60,21 +61,21 @@ namespace CAPPortal.Dal
             return 0;
         }
 
-        public async Task<IEnumerable<ApplicationLocaleAsset>> GetList(int applicationLocaleId)
+        public async Task<IEnumerable<Asset>> GetList(PermissionData permissionData, int applicationLocaleId)
         {
-            List<ApplicationLocaleAsset> ApplicationLocaleAssetList = new List<ApplicationLocaleAsset>();
+            List<Asset> ApplicationLocaleAssetList = new List<Asset>();
             using (var connection = await CreateSqlConnection())
             {
 
                 using (var command = new SqlCommand("spApplicationLocaleAssetGetList", connection) { CommandType = CommandType.StoredProcedure })
                 {
-                    command.Parameters.AddWithValue("@userId", "00000000-0000-0000-0000-00007731eedc");
+                    command.Parameters.AddWithValue("@userEmailId", permissionData.UserEmail);
                     command.Parameters.AddWithValue("@applicationLocaleId", applicationLocaleId);
                     connection.Open();
                     var reader = await command.ExecuteReaderAsync();
                     while (reader.Read())
                     {
-                        var applicationLocaleModelObj = reader.MapToObject<ApplicationLocaleAsset>();
+                        var applicationLocaleModelObj = reader.MapToObject<Asset>();
                         ApplicationLocaleAssetList.Add(applicationLocaleModelObj);
 
                     }

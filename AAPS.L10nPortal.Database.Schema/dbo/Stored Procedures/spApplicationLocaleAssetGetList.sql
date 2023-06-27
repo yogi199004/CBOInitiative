@@ -1,10 +1,11 @@
 ﻿CREATE PROCEDURE spApplicationLocaleAssetGetList
-	@userId					UNIQUEIDENTIFIER,
+	@userEmailId					varchar(100),
 	@applicationLocaleId	INT
 AS
 BEGIN
 	SET NOCOUNT ON;
-
+	Declare @userId UniqueIdentifier
+	Select @userId = id  from [User] where email = @userEmailId
 	EXEC spUserApplicationLocaleCheckPermissions @userId = @userId, @applicationLocaleId = @applicationLocaleId
 
 	declare @englishLocaleCode nvarchar(50) = 'en-US';

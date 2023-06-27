@@ -37,22 +37,10 @@ export class AssetsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.applicationLocaleId = params['applicationLocaleId'];
-      if (this.router.url.includes('/asset-links')) {
-        this.init();
-      }
-      //  this.applyAssetLinkFilter();
-      //  this.assetLinkFilter = true;
-      //}
-      //else {
-      //  this.init();
-      //}
-      //this.initFilterstates(false)
+      this.init();
     });
   }
-  initFilterstates(bool) {
-    this.filterApplied = bool;
-    this.filterDataService.setassetFilterState(bool)
-  }
+
   init(): void {
     this.getAssetsAsync()
       .then(data => {
@@ -60,7 +48,7 @@ export class AssetsComponent implements OnInit {
         this.localeCode = data.LocaleCode;
 
         this.pageLoadComplete = true;
-        this.getFilterDataAsync(this.assets)
+       
       });
   }
 
@@ -69,7 +57,6 @@ export class AssetsComponent implements OnInit {
       .getAssetListAsync(this.applicationLocaleId)
       .then(data => {
         this.assets = data.Assets;
-        this.checkForSortAfterFilter()// check if sorting was applied earlier
         return data;
       });
   }

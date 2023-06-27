@@ -15,4 +15,6 @@
 :r "AppName-Update.sql"
 
 :r "initSyncConfiguration.sql"
+
+:r "seed-local.sql"
 Go

@@ -3,6 +3,7 @@ using CAPPortal.Bal.Extensions;
 using CAPPortal.Contracts.Managers;
 using CAPPortal.Contracts.Models;
 using CAPPortal.Contracts.Services;
+using CAPPortal.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.StaticFiles;
@@ -25,12 +26,12 @@ namespace CAPPortal.Web.Controllers.WebApi
         [HttpGet]
         [Route("{applicationLocaleId:int}")]
         //[AllowAnonymous]
-        public async Task<ApplicationAssets> Get(int applicationLocaleId)
+        public async Task<IEnumerable<Asset>> Get( int applicationLocaleId)
         {
-            
+            var permissionData = CreatePermissionData();
             try
             {
-                return await this.ApplicationLocaleAssetManager.GetListAsync(applicationLocaleId);
+                return await this.ApplicationLocaleAssetManager.GetListAsync(permissionData,applicationLocaleId);
             }
             catch (Exception ex)
             {

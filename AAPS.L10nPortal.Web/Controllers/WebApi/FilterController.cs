@@ -73,54 +73,7 @@ namespace CAPPortal.Web.Controllers.WebApi
 
 
 
-        [HttpPost]
-        [Route("GetAssetFilterData")]
-        public async Task<ApplicationAssets> GetAssetFilterData([FromBody] AssetFilterData data)
-        {
-            var permissionData = CreatePermissionData();
-            try
-            {
-                var Assets = await this.ApplicationLocaleAssetManager.GetListAsync( data.ApplicationLocaleId);
-                ApplicationAssets filteredAssets = new ApplicationAssets();
-
-                filteredAssets.ApplicationName = Assets.ApplicationName;
-                filteredAssets.LocaleCode = Assets.LocaleCode;
-
-                if (data.IsFirstFilter)
-                {
-                    if (data.columnName.Equals("Key"))
-                    {
-                        filteredAssets.Assets = Assets.Assets.Where(l =>
-                          data.Key.Any(d => l.Key.Equals(d))).ToList();
-                        return filteredAssets;
-                    }
-                    else if (data.columnName.Equals("UpdatedDate"))
-                    {
-                        filteredAssets.Assets = Assets.Assets.Where(l =>
-                        data.UpdatedDate.Any(d3 => l.UpdatedDate.GetValueOrDefault().Year == d3.Year && l.UpdatedDate.GetValueOrDefault().Month == d3.Month && l.UpdatedDate.GetValueOrDefault().Day == d3.Day)).ToList();
-                        return filteredAssets;
-                    }
-                    else
-                    {
-                        return null;
-                    }
-
-                }
-                else
-                {
-                    filteredAssets.Assets = Assets.Assets.Where(l =>
-                    data.Key.Any(d => l.Key.Equals(d)))
-                    .Where(l1 => data.UpdatedDate.Any(d1 => l1.UpdatedDate.GetValueOrDefault().Year == d1.Year && l1.UpdatedDate.GetValueOrDefault().Month == d1.Month && l1.UpdatedDate.GetValueOrDefault().Day == d1.Day)).ToList();
-                    return filteredAssets;
-                }
-            }
-
-            catch (Exception ex)
-            {
-                Logger.LogError(ex, ex.Message);
-                return null;
-            }
-        }
+       
 
         [HttpGet]
         [Route("{applicationLocaleId:int}")]

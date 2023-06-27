@@ -141,7 +141,7 @@ namespace CAPPortal.Bal
         public async Task<UserApplicationLocale> GetApplicationLocaleByIdAsync(PermissionData permissionData, int applicationLocaleId)
         {
             var applicationLocale =
-                (await this.appLocaleRepository.GetUserApplicationLocaleById( applicationLocaleId))
+                (await this.appLocaleRepository.GetUserApplicationLocaleById(permissionData,applicationLocaleId))
                 .FirstOrDefault();
 
             if (applicationLocale != null && applicationLocale.UpdatedBy.HasValue)

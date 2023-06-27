@@ -89,8 +89,7 @@ WHEN NOT MATCHED BY TARGET THEN
 WHEN MATCHED THEN 
 UPDATE SET 
     t.[Name] = s.[Name],t.[RedisInstance]=s.[RedisInstance],t.[RepoIndex]=s.[RepoIndex]
-WHEN NOT MATCHED BY SOURCE THEN
-    DELETE;
+;
 
 
 
@@ -573,8 +572,8 @@ delete;
 --RoleMaster
 merge into dbo.[RoleMaster] as target
 using (values
-	(1,'Portal Admin','sransing@deloitte.com',GETUTCDATE(),null,null),
-	(2,'User','sransing@deloitte.com',GETUTCDATE(),null,null)
+	(1,'Portal Admin','yodubey@deloitte.com',GETUTCDATE(),null,null),
+	(2,'User','yodubey@deloitte.com',GETUTCDATE(),null,null)
 ) as source ([Id], [Name],[Createdby],[CreatedDate],[Updatedby],[UpdatedDate])
 on target.[Id] = source.[Id]
 when not matched by target then

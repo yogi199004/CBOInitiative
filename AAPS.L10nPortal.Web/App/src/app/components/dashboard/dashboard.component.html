@@ -47,11 +47,11 @@
       </div>
     </td>-->
     <td class="d-flex">
-      <button class="btn btn-primary text-button" *ngIf="locale.CanEdit && locale.TotalAssetsCount > 0"
+      <button class="btn btn-primary text-button" *ngIf="locale.CanEdit"
         (click)="navigateToLocaleAssets(locale.ApplicationLocaleId)">
         <span>Assets</span>
       </button>
-      <span class="assetLinks btn btn-link" *ngIf="locale.CanEdit && locale.UploadedAssetCount > 0"
+      <span class="assetLinks btn btn-link" *ngIf="locale.CanEdit"
         (click)="navigateToAssetsLink(locale.ApplicationLocaleId)">
         {{locale.UploadedAssetCount}}
       </span>
